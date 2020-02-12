@@ -20,8 +20,11 @@ extension UIColor {
 }
 struct colors {
     let background : UIColor!
+    let labelColor : UIColor!
     static let currentColors = colors (
-        background: UIColor.systemBackground
+        background: UIColor.systemBackground,
+        labelColor: UIColor.label
+        
     )
     
     
