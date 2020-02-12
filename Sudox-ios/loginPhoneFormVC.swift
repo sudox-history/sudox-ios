@@ -8,16 +8,22 @@
 
 import Foundation
 import UIKit
+import EasyPeasy
 
 class loginPhoneFormVC: UIViewController {
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        addView()
         
     }
-    
+    func addView () {
+        self.view.backgroundColor = UIColor.systemBackground
+        self.title = loginPhoneFormTitle
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        
+    }
     
     
     

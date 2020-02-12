@@ -3,10 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C6A44CF23F45550006385BB /* loginPhoneFormVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6A44CE23F45550006385BB /* loginPhoneFormVC.swift */; };
+		2C6A44D123F45847006385BB /* colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6A44D023F45847006385BB /* colors.swift */; };
+		2C6A44D523F45EB2006385BB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6A44D423F45EB2006385BB /* Extensions.swift */; };
+		2C6A44D923F45F87006385BB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2C6A44D823F45F87006385BB /* Localizable.strings */; };
+		2C6A44DB23F45FD5006385BB /* titles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6A44DA23F45FD5006385BB /* titles.swift */; };
+		397CBC3159416D6A8AA4890B /* Pods_Sudox_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04DA73921F9D973761360649 /* Pods_Sudox_ios.framework */; };
 		8013638223F44E32009AB712 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8013638123F44E32009AB712 /* AppDelegate.swift */; };
 		8013638423F44E32009AB712 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8013638323F44E32009AB712 /* SceneDelegate.swift */; };
 		8013638623F44E32009AB712 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8013638523F44E32009AB712 /* ViewController.swift */; };
@@ -16,6 +22,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04DA73921F9D973761360649 /* Pods_Sudox_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sudox_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05EF83AE60EF7CBE82DF8BF1 /* Pods-Sudox-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sudox-ios.release.xcconfig"; path = "Target Support Files/Pods-Sudox-ios/Pods-Sudox-ios.release.xcconfig"; sourceTree = "<group>"; };
+		198F62A07FF60E0F0D82876F /* Pods-Sudox-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sudox-ios.debug.xcconfig"; path = "Target Support Files/Pods-Sudox-ios/Pods-Sudox-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		2C6A44CE23F45550006385BB /* loginPhoneFormVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginPhoneFormVC.swift; sourceTree = "<group>"; };
+		2C6A44D023F45847006385BB /* colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colors.swift; sourceTree = "<group>"; };
+		2C6A44D423F45EB2006385BB /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		2C6A44D623F45F59006385BB /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		2C6A44D723F45F59006385BB /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		2C6A44D823F45F87006385BB /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		2C6A44DA23F45FD5006385BB /* titles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = titles.swift; sourceTree = "<group>"; };
 		8013637E23F44E32009AB712 /* Sudox-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sudox-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8013638123F44E32009AB712 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8013638323F44E32009AB712 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,17 +47,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				397CBC3159416D6A8AA4890B /* Pods_Sudox_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1751168F4F1142A08F5ABA94 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				198F62A07FF60E0F0D82876F /* Pods-Sudox-ios.debug.xcconfig */,
+				05EF83AE60EF7CBE82DF8BF1 /* Pods-Sudox-ios.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		8013637523F44E32009AB712 = {
 			isa = PBXGroup;
 			children = (
 				8013638023F44E32009AB712 /* Sudox-ios */,
 				8013637F23F44E32009AB712 /* Products */,
+				1751168F4F1142A08F5ABA94 /* Pods */,
+				AA592FAD099DAC1154D9D745 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,12 +87,25 @@
 				8013638123F44E32009AB712 /* AppDelegate.swift */,
 				8013638323F44E32009AB712 /* SceneDelegate.swift */,
 				8013638523F44E32009AB712 /* ViewController.swift */,
+				2C6A44D023F45847006385BB /* colors.swift */,
+				2C6A44D823F45F87006385BB /* Localizable.strings */,
+				2C6A44CE23F45550006385BB /* loginPhoneFormVC.swift */,
+				2C6A44DA23F45FD5006385BB /* titles.swift */,
+				2C6A44D423F45EB2006385BB /* Extensions.swift */,
 				8013638723F44E32009AB712 /* Main.storyboard */,
 				8013638A23F44E32009AB712 /* Assets.xcassets */,
 				8013638C23F44E32009AB712 /* LaunchScreen.storyboard */,
 				8013638F23F44E32009AB712 /* Info.plist */,
 			);
 			path = "Sudox-ios";
+			sourceTree = "<group>";
+		};
+		AA592FAD099DAC1154D9D745 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				04DA73921F9D973761360649 /* Pods_Sudox_ios.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +115,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8013639223F44E32009AB712 /* Build configuration list for PBXNativeTarget "Sudox-ios" */;
 			buildPhases = (
+				580511310B2875F068FCB420 /* [CP] Check Pods Manifest.lock */,
 				8013637A23F44E32009AB712 /* Sources */,
 				8013637B23F44E32009AB712 /* Frameworks */,
 				8013637C23F44E32009AB712 /* Resources */,
+				C3499A86287812A668668D04 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -95,20 +138,21 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1140;
 				LastUpgradeCheck = 1140;
-				ORGANIZATIONNAME = "Nikita Kazantsev";
+				ORGANIZATIONNAME = Sudox;
 				TargetAttributes = {
 					8013637D23F44E32009AB712 = {
 						CreatedOnToolsVersion = 11.4;
 					};
 				};
 			};
-			buildConfigurationList = 8013637923F44E32009AB712 /* Build configuration list for PBXProject "Sudox-ios" */;
+			buildConfigurationList = 8013637923F44E32009AB712 /* Build configuration list for PBXProject "sudox-ios" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 8013637523F44E32009AB712;
 			productRefGroup = 8013637F23F44E32009AB712 /* Products */;
@@ -126,6 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8013638E23F44E32009AB712 /* LaunchScreen.storyboard in Resources */,
+				2C6A44D923F45F87006385BB /* Localizable.strings in Resources */,
 				8013638B23F44E32009AB712 /* Assets.xcassets in Resources */,
 				8013638923F44E32009AB712 /* Main.storyboard in Resources */,
 			);
@@ -133,13 +178,59 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		580511310B2875F068FCB420 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Sudox-ios-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C3499A86287812A668668D04 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Sudox-ios/Pods-Sudox-ios-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Sudox-ios/Pods-Sudox-ios-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Sudox-ios/Pods-Sudox-ios-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8013637A23F44E32009AB712 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				8013638623F44E32009AB712 /* ViewController.swift in Sources */,
+				2C6A44D523F45EB2006385BB /* Extensions.swift in Sources */,
+				2C6A44D123F45847006385BB /* colors.swift in Sources */,
+				2C6A44CF23F45550006385BB /* loginPhoneFormVC.swift in Sources */,
 				8013638223F44E32009AB712 /* AppDelegate.swift in Sources */,
+				2C6A44DB23F45FD5006385BB /* titles.swift in Sources */,
 				8013638423F44E32009AB712 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -151,6 +242,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				8013638823F44E32009AB712 /* Base */,
+				2C6A44D623F45F59006385BB /* ru */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -159,6 +251,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				8013638D23F44E32009AB712 /* Base */,
+				2C6A44D723F45F59006385BB /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -170,6 +263,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -230,6 +324,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -282,16 +377,18 @@
 		};
 		8013639323F44E32009AB712 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 198F62A07FF60E0F0D82876F /* Pods-Sudox-ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Z6TZXH8MS8;
+				DEVELOPMENT_TEAM = 2QFL4STWWK;
 				INFOPLIST_FILE = "Sudox-ios/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.nickyapp.Sudox-ios";
+				PRODUCT_BUNDLE_IDENTIFIER = com.user1man.sudox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -300,16 +397,18 @@
 		};
 		8013639423F44E32009AB712 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05EF83AE60EF7CBE82DF8BF1 /* Pods-Sudox-ios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Z6TZXH8MS8;
+				DEVELOPMENT_TEAM = 2QFL4STWWK;
 				INFOPLIST_FILE = "Sudox-ios/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.nickyapp.Sudox-ios";
+				PRODUCT_BUNDLE_IDENTIFIER = com.user1man.sudox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -319,7 +418,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8013637923F44E32009AB712 /* Build configuration list for PBXProject "Sudox-ios" */ = {
+		8013637923F44E32009AB712 /* Build configuration list for PBXProject "sudox-ios" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8013639023F44E32009AB712 /* Debug */,
