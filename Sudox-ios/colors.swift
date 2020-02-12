@@ -14,6 +14,7 @@ extension UIColor {
     static let NativeBlue1 = hexStringToUIColor(hex: "007AFF")
     static let myGray = hexStringToUIColor(hex: "EFEFF4")
     static let myLightGray = hexStringToUIColor(hex: "F8F8F8")
+    static let grayBorder = hexStringToUIColor(hex: "E0E0E0").withAlphaComponent(0.6)
     static let NativeGreen = UIColor(red:76/255, green:217/255, blue:100/255, alpha:1)
     static let Red = UIColor(red: 215/255, green: 50/255, blue: 37/255, alpha: 1)
     
@@ -24,7 +25,6 @@ struct colors {
     static let currentColors = colors (
         background: UIColor.systemBackground,
         labelColor: UIColor.label
-        
     )
     
     

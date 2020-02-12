@@ -25,3 +25,23 @@ extension UIViewController {
         view.endEditing(true)
     }
 }
+
+extension UILabel {
+    func setUpMainLabel() {
+        // заменить на open sans
+        self.font = UIFont.boldSystemFont(ofSize: 20.0)
+        self.textAlignment = .center
+        //self.textColor = getColor().labelColor
+    }
+    func setUpDescriptionLabel() {
+        // заменить на open sans
+        //self.font = UIFont.systemFont(ofSize: 14.0)
+        self.adjustsFontSizeToFitWidth = true
+        self.textAlignment = .left
+        self.numberOfLines = 0
+        self.lineBreakMode = .byWordWrapping
+        
+        self.textColor = getColor().labelColor
+        
+    }
+}
