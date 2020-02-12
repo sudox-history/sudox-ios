@@ -6,5 +6,6 @@ target 'Sudox-ios' do
   use_frameworks!
 
   pod 'EasyPeasy'
+  pod 'PhoneNumberKit'
   
 end
