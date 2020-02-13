@@ -76,8 +76,9 @@ class loginPhoneFormVC: UIViewController {
     
     @objc func rightNavBarItemTapped(){
         self.performSegue(withIdentifier: "loginToSmsVerification", sender: self)
-        
     }
+    
+    
     @objc func phoneNumberCorrection(){
         if (phoneNumberTextField.isValidNumber) {
             navigationItem.rightBarButtonItem?.tintColor = .green
@@ -87,6 +88,13 @@ class loginPhoneFormVC: UIViewController {
             navigationItem.rightBarButtonItem?.isEnabled = false
         }
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "loginToSmsVerification" {
+            let controller = segue.destination as! smsPhoneFormVC
+            controller.telephone = phoneNumberTextField.text!
+        }
     }
     
 }

@@ -8,5 +8,7 @@
 
 import Foundation
 let loginPhoneFormTitle = "Phone Verification"
+let SmsPhoneFormWelcomingTitle = "Welcome back"
 let nextTitle = "Next"
 let loginPhoneFormdescription = "Enter your phone and we will send a confirmation code for you"
+let smsPhoneFormdescription = "Check your SMS and enter the code we sent to"

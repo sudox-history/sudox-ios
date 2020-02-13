@@ -11,10 +11,54 @@ import UIKit
 import EasyPeasy
 
 class smsPhoneFormVC: UIViewController {
-
-    
+    var telephone: String = ""
+    var descriptionLabel = UILabel()
+    var CodeTextField: SmsTextField = SmsTextField()
+    let imageIcon = UIImageView(image: UIImage(systemName: "phone"))
     override func viewDidLoad() {
         super.viewDidLoad()
+        addView()
+        addDescriptionLabel()
+        addImageIcon()
+        addSmsCodeTextField()
         
+    }
+    
+    func addView () {
+        self.title = SmsPhoneFormWelcomingTitle
+        
+    }
+    
+    func addImageIcon () {
+        self.view.addSubview(imageIcon)
+        imageIcon.tintColor = .black
+        imageIcon.easy.layout([Left(15).to(view.safeAreaLayoutGuide, .left),Right(16).to(descriptionLabel),Top(25).to(view.safeAreaLayoutGuide, .top),Height(24), Width(24)])
+        
+    }
+    
+    func addDescriptionLabel () {
+        
+        self.view.addSubview(descriptionLabel)
+        descriptionLabel.text = smsPhoneFormdescription + " " + telephone
+        descriptionLabel.easy.layout([Right(16),Top(15).to(view.safeAreaLayoutGuide, .top),Height(44)])
+        descriptionLabel.setUpDescriptionLabel()
+        descriptionLabel.isEnabled = false
+        
+    }
+    
+    
+    func addSmsCodeTextField () {
+        self.view.addSubview(CodeTextField)
+        CodeTextField.configure()
+        CodeTextField.easy.layout([Left(16),Right(16),Top(40).to(descriptionLabel), Height(50)])
+        // данная часть кода срабатывает лишь когда вводится последняя цифра кода
+        CodeTextField.didEnteredLastDigit = { [weak self] code in
+            // вызов segue для след вида
+        }
+        
+    }
+    
+    @objc func rightNavBarItemTapped(){
+        //self.performSegue(withIdentifier: "loginToSmsVerification", sender: self)
     }
 }
