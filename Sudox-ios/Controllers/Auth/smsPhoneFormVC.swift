@@ -54,6 +54,7 @@ class smsPhoneFormVC: UIViewController {
         // данная часть кода срабатывает лишь когда вводится последняя цифра кода
         CodeTextField.didEnteredLastDigit = { [weak self] code in
             // вызов segue для след вида
+            print("segue test")
         }
         
     }
