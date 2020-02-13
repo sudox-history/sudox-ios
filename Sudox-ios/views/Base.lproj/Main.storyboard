@@ -34,10 +34,29 @@
                         <viewLayoutGuide key="safeArea" id="asR-FC-4dZ"/>
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="Wsk-aP-rLR"/>
+                    <connections>
+                        <segue destination="Sod-ss-Sek" kind="show" identifier="loginToSmsVerification" id="DbU-Jv-2vm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="itH-1q-73r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-197" y="200"/>
+            <point key="canvasLocation" x="-132" y="200"/>
+        </scene>
+        <!--Sms Phone FormVC-->
+        <scene sceneID="LBB-UK-AiO">
+            <objects>
+                <viewController id="Sod-ss-Sek" customClass="smsPhoneFormVC" customModule="Sudox_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7Ol-6c-NRa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="psh-Mz-8zj"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ouP-iP-fmr"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E2j-Mh-3O4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="759" y="200"/>
         </scene>
     </scenes>
 </document>

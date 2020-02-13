@@ -22,7 +22,6 @@ class loginPhoneFormVC: UIViewController {
         addDescriptionLabel()
         addImageIcon()
         addPhoneNumberTextField()
-        
     }
     func addView () {
         self.view.backgroundColor = UIColor.systemBackground
@@ -30,6 +29,7 @@ class loginPhoneFormVC: UIViewController {
         
         self.navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: nextTitle, style: .plain, target: self, action: #selector(rightNavBarItemTapped))
+        navigationItem.rightBarButtonItem?.isEnabled = false
         navigationItem.rightBarButtonItem?.tintColor = getColor().labelColor
         
     }
@@ -75,11 +75,16 @@ class loginPhoneFormVC: UIViewController {
     
     
     @objc func rightNavBarItemTapped(){
+        self.performSegue(withIdentifier: "loginToSmsVerification", sender: self)
         
     }
     @objc func phoneNumberCorrection(){
         if (phoneNumberTextField.isValidNumber) {
             navigationItem.rightBarButtonItem?.tintColor = .green
+            navigationItem.rightBarButtonItem?.isEnabled = true
+        }
+        else{
+            navigationItem.rightBarButtonItem?.isEnabled = false
         }
         
     }
