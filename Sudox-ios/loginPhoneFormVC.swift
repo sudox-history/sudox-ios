@@ -60,6 +60,8 @@ class loginPhoneFormVC: UIViewController {
         self.phoneNumberTextField.flagButton.contentEdgeInsets.left = 20
         // макс длина номера
         self.phoneNumberTextField.maxDigits = 15
+        // phone uto-fill
+        self.phoneNumberTextField.textContentType = .telephoneNumber
         // закругление родительского view у поля ввода
         // добавление серых рамок
         self.phoneNumberTextField.layer.cornerRadius = 5
