@@ -53,10 +53,29 @@
                         <viewLayoutGuide key="safeArea" id="psh-Mz-8zj"/>
                     </view>
                     <navigationItem key="navigationItem" id="ouP-iP-fmr"/>
+                    <connections>
+                        <segue destination="EU5-jS-tU4" kind="show" identifier="SmsVerificationToNicknamePicker" id="qLg-Xf-GYA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E2j-Mh-3O4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="759" y="200"/>
+        </scene>
+        <!--Nickname PickerVC-->
+        <scene sceneID="6Vi-ho-2xr">
+            <objects>
+                <viewController id="EU5-jS-tU4" customClass="nicknamePickerVC" customModule="Sudox_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="G2V-pf-ZJ0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="3ep-Zg-t7Q"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="3jv-NJ-BiF"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ifu-yW-GyG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1754" y="200"/>
         </scene>
     </scenes>
 </document>

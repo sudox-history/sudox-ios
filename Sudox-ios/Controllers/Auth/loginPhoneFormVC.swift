@@ -34,17 +34,15 @@ class loginPhoneFormVC: UIViewController {
         
     }
     func addDescriptionLabel () {
-        
         self.view.addSubview(descriptionLabel)
-        descriptionLabel.text = loginPhoneFormdescription
+        descriptionLabel.text = loginPhoneFormDescription
         descriptionLabel.easy.layout([Right(16),Top(15).to(view.safeAreaLayoutGuide, .top),Height(44)])
         descriptionLabel.setUpDescriptionLabel()
         descriptionLabel.isEnabled = false
-        
     }
     func addImageIcon () {
         self.view.addSubview(imageIcon)
-        imageIcon.tintColor = .black
+        //imageIcon.tintColor = .black
         imageIcon.easy.layout([Left(15).to(view.safeAreaLayoutGuide, .left),Right(16).to(descriptionLabel),Top(25).to(view.safeAreaLayoutGuide, .top),Height(24), Width(24)])
         
     }
@@ -78,7 +76,7 @@ class loginPhoneFormVC: UIViewController {
         self.performSegue(withIdentifier: "loginToSmsVerification", sender: self)
     }
     
-    
+    // подкрашивание и активация кнопки 'next' в nav bar'e при корректном вводе телефона
     @objc func phoneNumberCorrection(){
         if (phoneNumberTextField.isValidNumber) {
             navigationItem.rightBarButtonItem?.tintColor = .green

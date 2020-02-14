@@ -10,15 +10,17 @@
 		2C6A44CF23F45550006385BB /* loginPhoneFormVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6A44CE23F45550006385BB /* loginPhoneFormVC.swift */; };
 		2C6A44D123F45847006385BB /* colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6A44D023F45847006385BB /* colors.swift */; };
 		2C6A44D523F45EB2006385BB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6A44D423F45EB2006385BB /* Extensions.swift */; };
-		2C6A44D923F45F87006385BB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2C6A44D823F45F87006385BB /* Localizable.strings */; };
 		2C6A44DB23F45FD5006385BB /* titles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6A44DA23F45FD5006385BB /* titles.swift */; };
 		397CBC3159416D6A8AA4890B /* Pods_Sudox_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04DA73921F9D973761360649 /* Pods_Sudox_ios.framework */; };
+		80065A9D23F556BB00E2411A /* smsPhoneFormVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80065A9C23F556BB00E2411A /* smsPhoneFormVC.swift */; };
 		8013638223F44E32009AB712 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8013638123F44E32009AB712 /* AppDelegate.swift */; };
 		8013638423F44E32009AB712 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8013638323F44E32009AB712 /* SceneDelegate.swift */; };
 		8013638623F44E32009AB712 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8013638523F44E32009AB712 /* ViewController.swift */; };
 		8013638923F44E32009AB712 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8013638723F44E32009AB712 /* Main.storyboard */; };
 		8013638B23F44E32009AB712 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8013638A23F44E32009AB712 /* Assets.xcassets */; };
 		8013638E23F44E32009AB712 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8013638C23F44E32009AB712 /* LaunchScreen.storyboard */; };
+		802E9CF523F73BCD00CABC3B /* nicknamePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802E9CF423F73BCD00CABC3B /* nicknamePickerVC.swift */; };
+		80E475FD23F55BD7009B7A4E /* smsTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E475FC23F55BD7009B7A4E /* smsTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,8 +32,8 @@
 		2C6A44D423F45EB2006385BB /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		2C6A44D623F45F59006385BB /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		2C6A44D723F45F59006385BB /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		2C6A44D823F45F87006385BB /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		2C6A44DA23F45FD5006385BB /* titles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = titles.swift; sourceTree = "<group>"; };
+		80065A9C23F556BB00E2411A /* smsPhoneFormVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = smsPhoneFormVC.swift; sourceTree = "<group>"; };
 		8013637E23F44E32009AB712 /* Sudox-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sudox-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8013638123F44E32009AB712 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8013638323F44E32009AB712 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -40,6 +42,8 @@
 		8013638A23F44E32009AB712 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8013638D23F44E32009AB712 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8013638F23F44E32009AB712 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		802E9CF423F73BCD00CABC3B /* nicknamePickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nicknamePickerVC.swift; sourceTree = "<group>"; };
+		80E475FC23F55BD7009B7A4E /* smsTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = smsTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,45 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		80065A9823F5554100E2411A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				80065A9B23F5559200E2411A /* Auth */,
+				8013638523F44E32009AB712 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		80065A9923F5555D00E2411A /* models */ = {
+			isa = PBXGroup;
+			children = (
+				2C6A44D023F45847006385BB /* colors.swift */,
+				2C6A44DA23F45FD5006385BB /* titles.swift */,
+				2C6A44D423F45EB2006385BB /* Extensions.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		80065A9A23F5556400E2411A /* views */ = {
+			isa = PBXGroup;
+			children = (
+				80E475FB23F55BBE009B7A4E /* Login */,
+				8013638723F44E32009AB712 /* Main.storyboard */,
+				8013638C23F44E32009AB712 /* LaunchScreen.storyboard */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		80065A9B23F5559200E2411A /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				2C6A44CE23F45550006385BB /* loginPhoneFormVC.swift */,
+				80065A9C23F556BB00E2411A /* smsPhoneFormVC.swift */,
+				802E9CF423F73BCD00CABC3B /* nicknamePickerVC.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
 		8013637523F44E32009AB712 = {
 			isa = PBXGroup;
 			children = (
@@ -84,20 +127,23 @@
 		8013638023F44E32009AB712 /* Sudox-ios */ = {
 			isa = PBXGroup;
 			children = (
+				80065A9923F5555D00E2411A /* models */,
+				80065A9A23F5556400E2411A /* views */,
+				80065A9823F5554100E2411A /* Controllers */,
 				8013638123F44E32009AB712 /* AppDelegate.swift */,
 				8013638323F44E32009AB712 /* SceneDelegate.swift */,
-				8013638523F44E32009AB712 /* ViewController.swift */,
-				2C6A44D023F45847006385BB /* colors.swift */,
-				2C6A44D823F45F87006385BB /* Localizable.strings */,
-				2C6A44CE23F45550006385BB /* loginPhoneFormVC.swift */,
-				2C6A44DA23F45FD5006385BB /* titles.swift */,
-				2C6A44D423F45EB2006385BB /* Extensions.swift */,
-				8013638723F44E32009AB712 /* Main.storyboard */,
 				8013638A23F44E32009AB712 /* Assets.xcassets */,
-				8013638C23F44E32009AB712 /* LaunchScreen.storyboard */,
 				8013638F23F44E32009AB712 /* Info.plist */,
 			);
 			path = "Sudox-ios";
+			sourceTree = "<group>";
+		};
+		80E475FB23F55BBE009B7A4E /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				80E475FC23F55BD7009B7A4E /* smsTextField.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		AA592FAD099DAC1154D9D745 /* Frameworks */ = {
@@ -170,7 +216,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8013638E23F44E32009AB712 /* LaunchScreen.storyboard in Resources */,
-				2C6A44D923F45F87006385BB /* Localizable.strings in Resources */,
 				8013638B23F44E32009AB712 /* Assets.xcassets in Resources */,
 				8013638923F44E32009AB712 /* Main.storyboard in Resources */,
 			);
@@ -226,12 +271,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				8013638623F44E32009AB712 /* ViewController.swift in Sources */,
+				80065A9D23F556BB00E2411A /* smsPhoneFormVC.swift in Sources */,
+				802E9CF523F73BCD00CABC3B /* nicknamePickerVC.swift in Sources */,
 				2C6A44D523F45EB2006385BB /* Extensions.swift in Sources */,
 				2C6A44D123F45847006385BB /* colors.swift in Sources */,
 				2C6A44CF23F45550006385BB /* loginPhoneFormVC.swift in Sources */,
 				8013638223F44E32009AB712 /* AppDelegate.swift in Sources */,
 				2C6A44DB23F45FD5006385BB /* titles.swift in Sources */,
 				8013638423F44E32009AB712 /* SceneDelegate.swift in Sources */,
+				80E475FD23F55BD7009B7A4E /* smsTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,14 +429,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2QFL4STWWK;
+				DEVELOPMENT_TEAM = Z6TZXH8MS8;
 				INFOPLIST_FILE = "Sudox-ios/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.user1man.sudox;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sinaps.sudox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
