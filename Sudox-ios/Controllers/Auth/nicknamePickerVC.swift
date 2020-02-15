@@ -20,12 +20,12 @@ class nicknamePickerVC: UIViewController {
         addDescriptionLabel()
         addImageIcon()
         addNicknameTextField()
-        
+        self.navigationItem.hidesBackButton = true
     }
 
     func addView () {
         self.view.backgroundColor = UIColor.systemBackground
-        self.title = loginPhoneFormTitle
+        self.title = nicknamePickerTitle
         
         self.navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: nextTitle, style: .plain, target: self, action: #selector(rightNavBarItemTapped))

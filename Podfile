@@ -7,5 +7,5 @@ target 'Sudox-ios' do
 
   pod 'EasyPeasy'
   pod 'PhoneNumberKit'
-  
+  pod 'RevealingSplashView'
 end

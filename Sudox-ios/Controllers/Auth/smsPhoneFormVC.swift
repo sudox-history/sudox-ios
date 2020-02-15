@@ -51,7 +51,10 @@ class smsPhoneFormVC: UIViewController {
         CodeTextField.didEnteredLastDigit = { [weak self] code in
             // вызов segue для след вида
             // если такой пользователь не зареган
-            self?.performSegue(withIdentifier: "SmsVerificationToNicknamePicker", sender: self)
+//            self?.performSegue(withIdentifier: "SmsVerificationToNicknamePicker", sender: self)
+            let vc = nicknamePickerVC()
+            vc.modalPresentationStyle = .overFullScreen
+            self?.show(vc, sender: nil)
             // иначе перекидывать сразу на экран ленты
             // ...
         }
