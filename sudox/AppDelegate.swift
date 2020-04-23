@@ -11,10 +11,18 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
+    var window: UIWindow?
+    let rootRouter = RootRouter()
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        //TEST
+        if CommandLine.arguments.contains("isLoggined") {
+            UserDefaults.standard.set(true, forKey: "LOGGED_IN")
+        }
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = rootRouter.chooseVC()//rootRouter.chooseVC()
+        window?.makeKeyAndVisible()
+        
+        
         return true
     }
 
@@ -31,7 +39,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
-
+    
 
 }
-
+extension AppDelegate {
+static var shared: AppDelegate {
+   return UIApplication.shared.delegate as! AppDelegate
+}
+}

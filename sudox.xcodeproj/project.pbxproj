@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0363223B87D54E33136FB440 /* libPods-sudox.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D664BD5EF0EACDFB70CD8C9 /* libPods-sudox.a */; };
 		2C7A54752450B6780086AB73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A54742450B6780086AB73 /* AppDelegate.swift */; };
 		2C7A54772450B6780086AB73 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A54762450B6780086AB73 /* SceneDelegate.swift */; };
 		2C7A54792450B6780086AB73 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A54782450B6780086AB73 /* ViewController.swift */; };
@@ -15,6 +16,53 @@
 		2C7A54812450B67A0086AB73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C7A547F2450B67A0086AB73 /* LaunchScreen.storyboard */; };
 		2C7A548C2450B67A0086AB73 /* sudoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A548B2450B67A0086AB73 /* sudoxTests.swift */; };
 		2C7A54972450B67A0086AB73 /* sudoxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A54962450B67A0086AB73 /* sudoxUITests.swift */; };
+		2C7A54B82450B98C0086AB73 /* person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A54A72450B98C0086AB73 /* person.swift */; };
+		2C7A54B92450B98C0086AB73 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A54A82450B98C0086AB73 /* Extensions.swift */; };
+		2C7A54BA2450B98C0086AB73 /* feed_whole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A54AA2450B98C0086AB73 /* feed_whole.swift */; };
+		2C7A54BB2450B98C0086AB73 /* MediaActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A54AB2450B98C0086AB73 /* MediaActivity.swift */; };
+		2C7A54BC2450B98C0086AB73 /* FeedFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A54AC2450B98C0086AB73 /* FeedFetcher.swift */; };
+		2C7A54BD2450B98C0086AB73 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A54AD2450B98C0086AB73 /* Post.swift */; };
+		2C7A54BE2450B98C0086AB73 /* stories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A54AE2450B98C0086AB73 /* stories.swift */; };
+		2C7A54BF2450B98C0086AB73 /* FriendFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A54AF2450B98C0086AB73 /* FriendFetcher.swift */; };
+		2C7A54C02450B98C0086AB73 /* colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A54B02450B98C0086AB73 /* colors.swift */; };
+		2C7A54C12450B98C0086AB73 /* titles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A54B12450B98C0086AB73 /* titles.swift */; };
+		2C7A54C22450B98C0086AB73 /* deeplinkNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A54B32450B98C0086AB73 /* deeplinkNavigator.swift */; };
+		2C7A54C32450B98C0086AB73 /* deeplinkParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A54B42450B98C0086AB73 /* deeplinkParser.swift */; };
+		2C7A54C42450B98C0086AB73 /* deeplinkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A54B52450B98C0086AB73 /* deeplinkManager.swift */; };
+		2C7A54C52450B98C0086AB73 /* shortcutParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A54B62450B98C0086AB73 /* shortcutParser.swift */; };
+		2C7A54C62450B98C0086AB73 /* Socket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A54B72450B98C0086AB73 /* Socket.swift */; };
+		2C7A54D72450BA630086AB73 /* smsTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A54C92450BA620086AB73 /* smsTextField.swift */; };
+		2C7A54D82450BA630086AB73 /* MaybeYouKnowCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A54CB2450BA620086AB73 /* MaybeYouKnowCardView.swift */; };
+		2C7A54D92450BA630086AB73 /* FriendsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A54CC2450BA620086AB73 /* FriendsListView.swift */; };
+		2C7A54DA2450BA630086AB73 /* FriendListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A54CD2450BA620086AB73 /* FriendListItemView.swift */; };
+		2C7A54DB2450BA630086AB73 /* RequestsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A54CE2450BA620086AB73 /* RequestsListView.swift */; };
+		2C7A54DC2450BA630086AB73 /* StoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A54D02450BA620086AB73 /* StoryItem.swift */; };
+		2C7A54DD2450BA630086AB73 /* story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A54D12450BA620086AB73 /* story.swift */; };
+		2C7A54DE2450BA630086AB73 /* dialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A54D32450BA630086AB73 /* dialogView.swift */; };
+		2C7A54DF2450BA630086AB73 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A54D52450BA630086AB73 /* PostView.swift */; };
+		2C7A54E02450BA630086AB73 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A54D62450BA630086AB73 /* Feed.swift */; };
+		2C7A54FC2450BB400086AB73 /* smsPhoneFormVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A54E62450BB400086AB73 /* smsPhoneFormVC.swift */; };
+		2C7A54FD2450BB400086AB73 /* nicknamePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A54E72450BB400086AB73 /* nicknamePickerVC.swift */; };
+		2C7A54FE2450BB400086AB73 /* loginPhoneFormVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A54E82450BB400086AB73 /* loginPhoneFormVC.swift */; };
+		2C7A54FF2450BB400086AB73 /* loginNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A54E92450BB400086AB73 /* loginNavController.swift */; };
+		2C7A55002450BB400086AB73 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A54EC2450BB400086AB73 /* MessagesViewController.swift */; };
+		2C7A55012450BB400086AB73 /* messagesNavControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A54ED2450BB400086AB73 /* messagesNavControler.swift */; };
+		2C7A55022450BB400086AB73 /* WorldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A54EF2450BB400086AB73 /* WorldViewController.swift */; };
+		2C7A55032450BB400086AB73 /* BlogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A54F12450BB400086AB73 /* BlogViewController.swift */; };
+		2C7A55042450BB400086AB73 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A54F22450BB400086AB73 /* MainTabBarController.swift */; };
+		2C7A55052450BB400086AB73 /* peopleNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A54F42450BB400086AB73 /* peopleNavController.swift */; };
+		2C7A55062450BB400086AB73 /* CustomSegmentedContrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A54F52450BB400086AB73 /* CustomSegmentedContrl.swift */; };
+		2C7A55072450BB400086AB73 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A54F62450BB400086AB73 /* FeedVC.swift */; };
+		2C7A55082450BB400086AB73 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A54F72450BB400086AB73 /* PeopleViewController.swift */; };
+		2C7A55092450BB400086AB73 /* testVC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A54F82450BB400086AB73 /* testVC2.swift */; };
+		2C7A550A2450BB400086AB73 /* FriendsListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A54FA2450BB400086AB73 /* FriendsListVC.swift */; };
+		2C7A550B2450BB400086AB73 /* testVC1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A54FB2450BB400086AB73 /* testVC1.swift */; };
+		2C7A550D2450BBC30086AB73 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A550C2450BBC20086AB73 /* RootViewController.swift */; };
+		2C7A550F2450BBDD0086AB73 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A550E2450BBDD0086AB73 /* SplashViewController.swift */; };
+		2C7A55112450BD230086AB73 /* DebagVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A55102450BD230086AB73 /* DebagVC.swift */; };
+		2C7A55132450BD3D0086AB73 /* LaunchScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A55122450BD3D0086AB73 /* LaunchScreenVC.swift */; };
+		48740754F61DBA74CD73B2A0 /* libPods-sudoxUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C5FF6E997CFF37B48DB99FE9 /* libPods-sudoxUITests.a */; };
+		992F4A81A707776FC2B5E4AB /* libPods-sudoxTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC465278A1D9AD54711FE19 /* libPods-sudoxTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +83,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D664BD5EF0EACDFB70CD8C9 /* libPods-sudox.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-sudox.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C7A54712450B6780086AB73 /* sudox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sudox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C7A54742450B6780086AB73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C7A54762450B6780086AB73 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +98,59 @@
 		2C7A54922450B67A0086AB73 /* sudoxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sudoxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C7A54962450B67A0086AB73 /* sudoxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sudoxUITests.swift; sourceTree = "<group>"; };
 		2C7A54982450B67A0086AB73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C7A54A72450B98C0086AB73 /* person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = person.swift; sourceTree = "<group>"; };
+		2C7A54A82450B98C0086AB73 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		2C7A54AA2450B98C0086AB73 /* feed_whole.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = feed_whole.swift; sourceTree = "<group>"; };
+		2C7A54AB2450B98C0086AB73 /* MediaActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaActivity.swift; sourceTree = "<group>"; };
+		2C7A54AC2450B98C0086AB73 /* FeedFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedFetcher.swift; sourceTree = "<group>"; };
+		2C7A54AD2450B98C0086AB73 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		2C7A54AE2450B98C0086AB73 /* stories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = stories.swift; sourceTree = "<group>"; };
+		2C7A54AF2450B98C0086AB73 /* FriendFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendFetcher.swift; sourceTree = "<group>"; };
+		2C7A54B02450B98C0086AB73 /* colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = colors.swift; sourceTree = "<group>"; };
+		2C7A54B12450B98C0086AB73 /* titles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = titles.swift; sourceTree = "<group>"; };
+		2C7A54B32450B98C0086AB73 /* deeplinkNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = deeplinkNavigator.swift; sourceTree = "<group>"; };
+		2C7A54B42450B98C0086AB73 /* deeplinkParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = deeplinkParser.swift; sourceTree = "<group>"; };
+		2C7A54B52450B98C0086AB73 /* deeplinkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = deeplinkManager.swift; sourceTree = "<group>"; };
+		2C7A54B62450B98C0086AB73 /* shortcutParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = shortcutParser.swift; sourceTree = "<group>"; };
+		2C7A54B72450B98C0086AB73 /* Socket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Socket.swift; sourceTree = "<group>"; };
+		2C7A54C92450BA620086AB73 /* smsTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = smsTextField.swift; sourceTree = "<group>"; };
+		2C7A54CB2450BA620086AB73 /* MaybeYouKnowCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaybeYouKnowCardView.swift; sourceTree = "<group>"; };
+		2C7A54CC2450BA620086AB73 /* FriendsListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsListView.swift; sourceTree = "<group>"; };
+		2C7A54CD2450BA620086AB73 /* FriendListItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendListItemView.swift; sourceTree = "<group>"; };
+		2C7A54CE2450BA620086AB73 /* RequestsListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestsListView.swift; sourceTree = "<group>"; };
+		2C7A54D02450BA620086AB73 /* StoryItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryItem.swift; sourceTree = "<group>"; };
+		2C7A54D12450BA620086AB73 /* story.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = story.swift; sourceTree = "<group>"; };
+		2C7A54D32450BA630086AB73 /* dialogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dialogView.swift; sourceTree = "<group>"; };
+		2C7A54D52450BA630086AB73 /* PostView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
+		2C7A54D62450BA630086AB73 /* Feed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
+		2C7A54E62450BB400086AB73 /* smsPhoneFormVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = smsPhoneFormVC.swift; sourceTree = "<group>"; };
+		2C7A54E72450BB400086AB73 /* nicknamePickerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = nicknamePickerVC.swift; sourceTree = "<group>"; };
+		2C7A54E82450BB400086AB73 /* loginPhoneFormVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loginPhoneFormVC.swift; sourceTree = "<group>"; };
+		2C7A54E92450BB400086AB73 /* loginNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loginNavController.swift; sourceTree = "<group>"; };
+		2C7A54EC2450BB400086AB73 /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		2C7A54ED2450BB400086AB73 /* messagesNavControler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = messagesNavControler.swift; sourceTree = "<group>"; };
+		2C7A54EF2450BB400086AB73 /* WorldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorldViewController.swift; sourceTree = "<group>"; };
+		2C7A54F12450BB400086AB73 /* BlogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlogViewController.swift; sourceTree = "<group>"; };
+		2C7A54F22450BB400086AB73 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		2C7A54F42450BB400086AB73 /* peopleNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = peopleNavController.swift; sourceTree = "<group>"; };
+		2C7A54F52450BB400086AB73 /* CustomSegmentedContrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSegmentedContrl.swift; sourceTree = "<group>"; };
+		2C7A54F62450BB400086AB73 /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
+		2C7A54F72450BB400086AB73 /* PeopleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
+		2C7A54F82450BB400086AB73 /* testVC2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testVC2.swift; sourceTree = "<group>"; };
+		2C7A54FA2450BB400086AB73 /* FriendsListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsListVC.swift; sourceTree = "<group>"; };
+		2C7A54FB2450BB400086AB73 /* testVC1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testVC1.swift; sourceTree = "<group>"; };
+		2C7A550C2450BBC20086AB73 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		2C7A550E2450BBDD0086AB73 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		2C7A55102450BD230086AB73 /* DebagVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebagVC.swift; sourceTree = "<group>"; };
+		2C7A55122450BD3D0086AB73 /* LaunchScreenVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreenVC.swift; sourceTree = "<group>"; };
+		2D7A83963FE76FDE246F1AE6 /* Pods-sudoxUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sudoxUITests.debug.xcconfig"; path = "Target Support Files/Pods-sudoxUITests/Pods-sudoxUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		4DA2538F55F1484BFE2553EA /* Pods-sudox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sudox.debug.xcconfig"; path = "Target Support Files/Pods-sudox/Pods-sudox.debug.xcconfig"; sourceTree = "<group>"; };
+		525EEF40297AF2F3EA3941E8 /* Pods-sudox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sudox.release.xcconfig"; path = "Target Support Files/Pods-sudox/Pods-sudox.release.xcconfig"; sourceTree = "<group>"; };
+		5DC465278A1D9AD54711FE19 /* libPods-sudoxTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-sudoxTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		81EE7308DA2B047C80ABC9D4 /* Pods-sudoxTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sudoxTests.release.xcconfig"; path = "Target Support Files/Pods-sudoxTests/Pods-sudoxTests.release.xcconfig"; sourceTree = "<group>"; };
+		B257C54CB21C96F183C898E3 /* Pods-sudoxTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sudoxTests.debug.xcconfig"; path = "Target Support Files/Pods-sudoxTests/Pods-sudoxTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B54C6AF9210B34D8D37036CD /* Pods-sudoxUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sudoxUITests.release.xcconfig"; path = "Target Support Files/Pods-sudoxUITests/Pods-sudoxUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C5FF6E997CFF37B48DB99FE9 /* libPods-sudoxUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-sudoxUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +158,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0363223B87D54E33136FB440 /* libPods-sudox.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +166,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				992F4A81A707776FC2B5E4AB /* libPods-sudoxTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +174,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48740754F61DBA74CD73B2A0 /* libPods-sudoxUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +188,8 @@
 				2C7A548A2450B67A0086AB73 /* sudoxTests */,
 				2C7A54952450B67A0086AB73 /* sudoxUITests */,
 				2C7A54722450B6780086AB73 /* Products */,
+				E5A119E494AFD877DB6CB524 /* Pods */,
+				F5EBA946A1B179B067E904F0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,9 +206,16 @@
 		2C7A54732450B6780086AB73 /* sudox */ = {
 			isa = PBXGroup;
 			children = (
+				2C7A54C72450BA1C0086AB73 /* views */,
+				2C7A54A62450B98C0086AB73 /* models */,
+				2C7A54E42450BB400086AB73 /* Controllers */,
+				2C7A54782450B6780086AB73 /* ViewController.swift */,
+				2C7A550E2450BBDD0086AB73 /* SplashViewController.swift */,
+				2C7A550C2450BBC20086AB73 /* RootViewController.swift */,
+				2C7A55102450BD230086AB73 /* DebagVC.swift */,
 				2C7A54742450B6780086AB73 /* AppDelegate.swift */,
 				2C7A54762450B6780086AB73 /* SceneDelegate.swift */,
-				2C7A54782450B6780086AB73 /* ViewController.swift */,
+				2C7A55122450BD3D0086AB73 /* LaunchScreenVC.swift */,
 				2C7A547A2450B6780086AB73 /* Main.storyboard */,
 				2C7A547D2450B67A0086AB73 /* Assets.xcassets */,
 				2C7A547F2450B67A0086AB73 /* LaunchScreen.storyboard */,
@@ -128,6 +242,204 @@
 			path = sudoxUITests;
 			sourceTree = "<group>";
 		};
+		2C7A54A62450B98C0086AB73 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				2C7A54A72450B98C0086AB73 /* person.swift */,
+				2C7A54A82450B98C0086AB73 /* Extensions.swift */,
+				2C7A54A92450B98C0086AB73 /* Feed */,
+				2C7A54AF2450B98C0086AB73 /* FriendFetcher.swift */,
+				2C7A54B02450B98C0086AB73 /* colors.swift */,
+				2C7A54B12450B98C0086AB73 /* titles.swift */,
+				2C7A54B22450B98C0086AB73 /* DeepLink */,
+				2C7A54B72450B98C0086AB73 /* Socket.swift */,
+			);
+			name = models;
+			path = models/models;
+			sourceTree = "<group>";
+		};
+		2C7A54A92450B98C0086AB73 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				2C7A54AA2450B98C0086AB73 /* feed_whole.swift */,
+				2C7A54AB2450B98C0086AB73 /* MediaActivity.swift */,
+				2C7A54AC2450B98C0086AB73 /* FeedFetcher.swift */,
+				2C7A54AD2450B98C0086AB73 /* Post.swift */,
+				2C7A54AE2450B98C0086AB73 /* stories.swift */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		2C7A54B22450B98C0086AB73 /* DeepLink */ = {
+			isa = PBXGroup;
+			children = (
+				2C7A54B32450B98C0086AB73 /* deeplinkNavigator.swift */,
+				2C7A54B42450B98C0086AB73 /* deeplinkParser.swift */,
+				2C7A54B52450B98C0086AB73 /* deeplinkManager.swift */,
+				2C7A54B62450B98C0086AB73 /* shortcutParser.swift */,
+			);
+			path = DeepLink;
+			sourceTree = "<group>";
+		};
+		2C7A54C72450BA1C0086AB73 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				2C7A54D42450BA630086AB73 /* Feed */,
+				2C7A54CA2450BA620086AB73 /* Friends */,
+				2C7A54C82450BA620086AB73 /* Login */,
+				2C7A54D22450BA630086AB73 /* Messages */,
+				2C7A54CF2450BA620086AB73 /* Story */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		2C7A54C82450BA620086AB73 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				2C7A54C92450BA620086AB73 /* smsTextField.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		2C7A54CA2450BA620086AB73 /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				2C7A54CB2450BA620086AB73 /* MaybeYouKnowCardView.swift */,
+				2C7A54CC2450BA620086AB73 /* FriendsListView.swift */,
+				2C7A54CD2450BA620086AB73 /* FriendListItemView.swift */,
+				2C7A54CE2450BA620086AB73 /* RequestsListView.swift */,
+			);
+			path = Friends;
+			sourceTree = "<group>";
+		};
+		2C7A54CF2450BA620086AB73 /* Story */ = {
+			isa = PBXGroup;
+			children = (
+				2C7A54D02450BA620086AB73 /* StoryItem.swift */,
+				2C7A54D12450BA620086AB73 /* story.swift */,
+			);
+			path = Story;
+			sourceTree = "<group>";
+		};
+		2C7A54D22450BA630086AB73 /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				2C7A54D32450BA630086AB73 /* dialogView.swift */,
+			);
+			path = Messages;
+			sourceTree = "<group>";
+		};
+		2C7A54D42450BA630086AB73 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				2C7A54D52450BA630086AB73 /* PostView.swift */,
+				2C7A54D62450BA630086AB73 /* Feed.swift */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		2C7A54E42450BB400086AB73 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2C7A54E52450BB400086AB73 /* Auth */,
+				2C7A54EA2450BB400086AB73 /* Main */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		2C7A54E52450BB400086AB73 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				2C7A54E62450BB400086AB73 /* smsPhoneFormVC.swift */,
+				2C7A54E72450BB400086AB73 /* nicknamePickerVC.swift */,
+				2C7A54E82450BB400086AB73 /* loginPhoneFormVC.swift */,
+				2C7A54E92450BB400086AB73 /* loginNavController.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		2C7A54EA2450BB400086AB73 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				2C7A54EB2450BB400086AB73 /* Messages */,
+				2C7A54EE2450BB400086AB73 /* World */,
+				2C7A54F02450BB400086AB73 /* Blog */,
+				2C7A54F22450BB400086AB73 /* MainTabBarController.swift */,
+				2C7A54F32450BB400086AB73 /* People */,
+				2C7A54F82450BB400086AB73 /* testVC2.swift */,
+				2C7A54F92450BB400086AB73 /* Friends */,
+				2C7A54FB2450BB400086AB73 /* testVC1.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		2C7A54EB2450BB400086AB73 /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				2C7A54EC2450BB400086AB73 /* MessagesViewController.swift */,
+				2C7A54ED2450BB400086AB73 /* messagesNavControler.swift */,
+			);
+			path = Messages;
+			sourceTree = "<group>";
+		};
+		2C7A54EE2450BB400086AB73 /* World */ = {
+			isa = PBXGroup;
+			children = (
+				2C7A54EF2450BB400086AB73 /* WorldViewController.swift */,
+			);
+			path = World;
+			sourceTree = "<group>";
+		};
+		2C7A54F02450BB400086AB73 /* Blog */ = {
+			isa = PBXGroup;
+			children = (
+				2C7A54F12450BB400086AB73 /* BlogViewController.swift */,
+			);
+			path = Blog;
+			sourceTree = "<group>";
+		};
+		2C7A54F32450BB400086AB73 /* People */ = {
+			isa = PBXGroup;
+			children = (
+				2C7A54F42450BB400086AB73 /* peopleNavController.swift */,
+				2C7A54F52450BB400086AB73 /* CustomSegmentedContrl.swift */,
+				2C7A54F62450BB400086AB73 /* FeedVC.swift */,
+				2C7A54F72450BB400086AB73 /* PeopleViewController.swift */,
+			);
+			path = People;
+			sourceTree = "<group>";
+		};
+		2C7A54F92450BB400086AB73 /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				2C7A54FA2450BB400086AB73 /* FriendsListVC.swift */,
+			);
+			path = Friends;
+			sourceTree = "<group>";
+		};
+		E5A119E494AFD877DB6CB524 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4DA2538F55F1484BFE2553EA /* Pods-sudox.debug.xcconfig */,
+				525EEF40297AF2F3EA3941E8 /* Pods-sudox.release.xcconfig */,
+				B257C54CB21C96F183C898E3 /* Pods-sudoxTests.debug.xcconfig */,
+				81EE7308DA2B047C80ABC9D4 /* Pods-sudoxTests.release.xcconfig */,
+				2D7A83963FE76FDE246F1AE6 /* Pods-sudoxUITests.debug.xcconfig */,
+				B54C6AF9210B34D8D37036CD /* Pods-sudoxUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F5EBA946A1B179B067E904F0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0D664BD5EF0EACDFB70CD8C9 /* libPods-sudox.a */,
+				5DC465278A1D9AD54711FE19 /* libPods-sudoxTests.a */,
+				C5FF6E997CFF37B48DB99FE9 /* libPods-sudoxUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +447,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2C7A549B2450B67A0086AB73 /* Build configuration list for PBXNativeTarget "sudox" */;
 			buildPhases = (
+				A9C3B9A46C8AA8F15035EF6F /* [CP] Check Pods Manifest.lock */,
 				2C7A546D2450B6780086AB73 /* Sources */,
 				2C7A546E2450B6780086AB73 /* Frameworks */,
 				2C7A546F2450B6780086AB73 /* Resources */,
+				6438158B9B3B21F65C861834 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -152,9 +466,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2C7A549E2450B67A0086AB73 /* Build configuration list for PBXNativeTarget "sudoxTests" */;
 			buildPhases = (
+				4F3D1C90E374BABF27AF35FB /* [CP] Check Pods Manifest.lock */,
 				2C7A54832450B67A0086AB73 /* Sources */,
 				2C7A54842450B67A0086AB73 /* Frameworks */,
 				2C7A54852450B67A0086AB73 /* Resources */,
+				8273BA4D2B9D7D3141923BD1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -170,9 +486,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2C7A54A12450B67A0086AB73 /* Build configuration list for PBXNativeTarget "sudoxUITests" */;
 			buildPhases = (
+				CBD5F4D425B701E6C38503B2 /* [CP] Check Pods Manifest.lock */,
 				2C7A548E2450B67A0086AB73 /* Sources */,
 				2C7A548F2450B67A0086AB73 /* Frameworks */,
 				2C7A54902450B67A0086AB73 /* Resources */,
+				46950C6D8589D7D545D89D70 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -254,14 +572,179 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		46950C6D8589D7D545D89D70 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-sudoxUITests/Pods-sudoxUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-sudoxUITests/Pods-sudoxUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-sudoxUITests/Pods-sudoxUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4F3D1C90E374BABF27AF35FB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-sudoxTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6438158B9B3B21F65C861834 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-sudox/Pods-sudox-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-sudox/Pods-sudox-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-sudox/Pods-sudox-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8273BA4D2B9D7D3141923BD1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-sudoxTests/Pods-sudoxTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-sudoxTests/Pods-sudoxTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-sudoxTests/Pods-sudoxTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A9C3B9A46C8AA8F15035EF6F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-sudox-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CBD5F4D425B701E6C38503B2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-sudoxUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2C7A546D2450B6780086AB73 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C7A54D72450BA630086AB73 /* smsTextField.swift in Sources */,
+				2C7A54B92450B98C0086AB73 /* Extensions.swift in Sources */,
+				2C7A54C02450B98C0086AB73 /* colors.swift in Sources */,
+				2C7A54C32450B98C0086AB73 /* deeplinkParser.swift in Sources */,
+				2C7A54C12450B98C0086AB73 /* titles.swift in Sources */,
+				2C7A550F2450BBDD0086AB73 /* SplashViewController.swift in Sources */,
+				2C7A54C22450B98C0086AB73 /* deeplinkNavigator.swift in Sources */,
+				2C7A550B2450BB400086AB73 /* testVC1.swift in Sources */,
+				2C7A54DB2450BA630086AB73 /* RequestsListView.swift in Sources */,
+				2C7A55092450BB400086AB73 /* testVC2.swift in Sources */,
+				2C7A54C52450B98C0086AB73 /* shortcutParser.swift in Sources */,
+				2C7A54BC2450B98C0086AB73 /* FeedFetcher.swift in Sources */,
+				2C7A55082450BB400086AB73 /* PeopleViewController.swift in Sources */,
+				2C7A55002450BB400086AB73 /* MessagesViewController.swift in Sources */,
+				2C7A54BB2450B98C0086AB73 /* MediaActivity.swift in Sources */,
+				2C7A55042450BB400086AB73 /* MainTabBarController.swift in Sources */,
+				2C7A55072450BB400086AB73 /* FeedVC.swift in Sources */,
+				2C7A54C42450B98C0086AB73 /* deeplinkManager.swift in Sources */,
 				2C7A54792450B6780086AB73 /* ViewController.swift in Sources */,
 				2C7A54752450B6780086AB73 /* AppDelegate.swift in Sources */,
+				2C7A55032450BB400086AB73 /* BlogViewController.swift in Sources */,
+				2C7A550D2450BBC30086AB73 /* RootViewController.swift in Sources */,
+				2C7A54BE2450B98C0086AB73 /* stories.swift in Sources */,
+				2C7A54DD2450BA630086AB73 /* story.swift in Sources */,
+				2C7A54B82450B98C0086AB73 /* person.swift in Sources */,
+				2C7A54DE2450BA630086AB73 /* dialogView.swift in Sources */,
+				2C7A54FE2450BB400086AB73 /* loginPhoneFormVC.swift in Sources */,
+				2C7A54FC2450BB400086AB73 /* smsPhoneFormVC.swift in Sources */,
+				2C7A55112450BD230086AB73 /* DebagVC.swift in Sources */,
+				2C7A55052450BB400086AB73 /* peopleNavController.swift in Sources */,
+				2C7A54E02450BA630086AB73 /* Feed.swift in Sources */,
+				2C7A54BD2450B98C0086AB73 /* Post.swift in Sources */,
+				2C7A54FF2450BB400086AB73 /* loginNavController.swift in Sources */,
+				2C7A54DA2450BA630086AB73 /* FriendListItemView.swift in Sources */,
+				2C7A54C62450B98C0086AB73 /* Socket.swift in Sources */,
+				2C7A55132450BD3D0086AB73 /* LaunchScreenVC.swift in Sources */,
+				2C7A550A2450BB400086AB73 /* FriendsListVC.swift in Sources */,
+				2C7A54FD2450BB400086AB73 /* nicknamePickerVC.swift in Sources */,
+				2C7A54DC2450BA630086AB73 /* StoryItem.swift in Sources */,
+				2C7A54D82450BA630086AB73 /* MaybeYouKnowCardView.swift in Sources */,
+				2C7A55022450BB400086AB73 /* WorldViewController.swift in Sources */,
+				2C7A55062450BB400086AB73 /* CustomSegmentedContrl.swift in Sources */,
+				2C7A54D92450BA630086AB73 /* FriendsListView.swift in Sources */,
 				2C7A54772450B6780086AB73 /* SceneDelegate.swift in Sources */,
+				2C7A55012450BB400086AB73 /* messagesNavControler.swift in Sources */,
+				2C7A54BF2450B98C0086AB73 /* FriendFetcher.swift in Sources */,
+				2C7A54DF2450BA630086AB73 /* PostView.swift in Sources */,
+				2C7A54BA2450B98C0086AB73 /* feed_whole.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,16 +915,17 @@
 		};
 		2C7A549C2450B67A0086AB73 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4DA2538F55F1484BFE2553EA /* Pods-sudox.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2QFL4STWWK;
+				DEVELOPMENT_TEAM = Z6TZXH8MS8;
 				INFOPLIST_FILE = sudox/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sudox.sudox;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sinaps.sinaps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -450,16 +934,17 @@
 		};
 		2C7A549D2450B67A0086AB73 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 525EEF40297AF2F3EA3941E8 /* Pods-sudox.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2QFL4STWWK;
+				DEVELOPMENT_TEAM = Z6TZXH8MS8;
 				INFOPLIST_FILE = sudox/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sudox.sudox;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sinaps.sinaps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -468,11 +953,12 @@
 		};
 		2C7A549F2450B67A0086AB73 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B257C54CB21C96F183C898E3 /* Pods-sudoxTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2QFL4STWWK;
+				DEVELOPMENT_TEAM = Z6TZXH8MS8;
 				INFOPLIST_FILE = sudoxTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -490,11 +976,12 @@
 		};
 		2C7A54A02450B67A0086AB73 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81EE7308DA2B047C80ABC9D4 /* Pods-sudoxTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2QFL4STWWK;
+				DEVELOPMENT_TEAM = Z6TZXH8MS8;
 				INFOPLIST_FILE = sudoxTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -512,10 +999,13 @@
 		};
 		2C7A54A22450B67A0086AB73 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D7A83963FE76FDE246F1AE6 /* Pods-sudoxUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2QFL4STWWK;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = sudoxUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -524,6 +1014,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sudox.sudoxUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = sudox;
@@ -532,10 +1024,13 @@
 		};
 		2C7A54A32450B67A0086AB73 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B54C6AF9210B34D8D37036CD /* Pods-sudoxUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2QFL4STWWK;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = sudoxUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -544,6 +1039,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sudox.sudoxUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = sudox;
