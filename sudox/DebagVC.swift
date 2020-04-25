@@ -30,6 +30,6 @@ class DebagVC: UIViewController {
     }
     @objc func singOut() {
         UserDefaults.standard.set(false, forKey: "LOGGED_IN")
-        self.present(ViewController(), animated: true, completion: nil)
+        self.present(SplashViewController(), animated: true, completion: nil)
     }
 }

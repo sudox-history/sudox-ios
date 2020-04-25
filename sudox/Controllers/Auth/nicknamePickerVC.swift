@@ -81,7 +81,9 @@ class nicknamePickerVC: UIViewController {
     @objc func rightNavBarItemTapped(){
         //self.performSegue(withIdentifier: "loginToSmsVerification", sender: self)
         UserDefaults.standard.set(true, forKey: "LOGGED_IN")
-        self.present(SplashViewController(), animated: true, completion: nil)
+        
+        UIApplication.shared.windows.first?.rootViewController = SplashViewController()
+        self.navigationController?.popToRootViewController(animated: true)
     }
 
     @objc func CheckAvailability(){
