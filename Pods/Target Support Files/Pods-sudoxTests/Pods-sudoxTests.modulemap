@@ -1,0 +1,6 @@
+module Pods_sudoxTests {
+  umbrella header "Pods-sudoxTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

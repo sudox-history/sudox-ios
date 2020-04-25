@@ -1,0 +1,6 @@
+module Pods_sudox {
+  umbrella header "Pods-sudox-umbrella.h"
+
+  export *
+  module * { export * }
+}

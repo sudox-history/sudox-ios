@@ -1,0 +1,37 @@
+PODS:
+  - EasyPeasy (1.9.0)
+  - MaterialDesignWidgets (0.0.10)
+  - PhoneNumberKit (3.2.0):
+    - PhoneNumberKit/PhoneNumberKitCore (= 3.2.0)
+    - PhoneNumberKit/UIKit (= 3.2.0)
+  - PhoneNumberKit/PhoneNumberKitCore (3.2.0)
+  - PhoneNumberKit/UIKit (3.2.0):
+    - PhoneNumberKit/PhoneNumberKitCore
+  - RevealingSplashView (0.6.0)
+  - Starscream (4.0.0)
+
+DEPENDENCIES:
+  - EasyPeasy
+  - MaterialDesignWidgets
+  - PhoneNumberKit
+  - RevealingSplashView
+  - Starscream
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - EasyPeasy
+    - MaterialDesignWidgets
+    - PhoneNumberKit
+    - RevealingSplashView
+    - Starscream
+
+SPEC CHECKSUMS:
+  EasyPeasy: 19a84ef8f8bbcf925b9fecc29d1d78b7dab96718
+  MaterialDesignWidgets: 902d573fef47e2b1deb480b5134ee481781b722c
+  PhoneNumberKit: df411d46177d1492da84e10b6c093846dd861452
+  RevealingSplashView: 40c5a770894459736acdc95655eeba0dd30ce91c
+  Starscream: 04b26f02727e10a002e6b5d21b188ba0d049910b
+
+PODFILE CHECKSUM: 18e1a00b738e6953df5c234c75bb6d93e7110d78
+
+COCOAPODS: 1.7.5

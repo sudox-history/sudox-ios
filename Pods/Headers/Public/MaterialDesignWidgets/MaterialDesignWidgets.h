@@ -1,0 +1,1 @@
+../../../MaterialDesignWidgets/MaterialDesignWidgets/MaterialDesignWidgets/MaterialDesignWidgets.h
