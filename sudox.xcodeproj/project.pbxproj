@@ -61,6 +61,9 @@
 		2C7A550F2450BBDD0086AB73 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A550E2450BBDD0086AB73 /* SplashViewController.swift */; };
 		2C7A55112450BD230086AB73 /* DebagVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A55102450BD230086AB73 /* DebagVC.swift */; };
 		2C7A55132450BD3D0086AB73 /* LaunchScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A55122450BD3D0086AB73 /* LaunchScreenVC.swift */; };
+		2C9CA4042455DEA9004ED8A7 /* ChatListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9CA4022455DEA9004ED8A7 /* ChatListTableViewCell.swift */; };
+		2C9CA4052455DEA9004ED8A7 /* ChatListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C9CA4032455DEA9004ED8A7 /* ChatListTableViewCell.xib */; };
+		2C9CA4072455E715004ED8A7 /* messagesListStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9CA4062455E715004ED8A7 /* messagesListStruct.swift */; };
 		48740754F61DBA74CD73B2A0 /* libPods-sudoxUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C5FF6E997CFF37B48DB99FE9 /* libPods-sudoxUITests.a */; };
 		992F4A81A707776FC2B5E4AB /* libPods-sudoxTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC465278A1D9AD54711FE19 /* libPods-sudoxTests.a */; };
 /* End PBXBuildFile section */
@@ -143,6 +146,9 @@
 		2C7A550E2450BBDD0086AB73 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		2C7A55102450BD230086AB73 /* DebagVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebagVC.swift; sourceTree = "<group>"; };
 		2C7A55122450BD3D0086AB73 /* LaunchScreenVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreenVC.swift; sourceTree = "<group>"; };
+		2C9CA4022455DEA9004ED8A7 /* ChatListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListTableViewCell.swift; sourceTree = "<group>"; };
+		2C9CA4032455DEA9004ED8A7 /* ChatListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatListTableViewCell.xib; sourceTree = "<group>"; };
+		2C9CA4062455E715004ED8A7 /* messagesListStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = messagesListStruct.swift; sourceTree = "<group>"; };
 		2D7A83963FE76FDE246F1AE6 /* Pods-sudoxUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sudoxUITests.debug.xcconfig"; path = "Target Support Files/Pods-sudoxUITests/Pods-sudoxUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4DA2538F55F1484BFE2553EA /* Pods-sudox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sudox.debug.xcconfig"; path = "Target Support Files/Pods-sudox/Pods-sudox.debug.xcconfig"; sourceTree = "<group>"; };
 		525EEF40297AF2F3EA3941E8 /* Pods-sudox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sudox.release.xcconfig"; path = "Target Support Files/Pods-sudox/Pods-sudox.release.xcconfig"; sourceTree = "<group>"; };
@@ -377,6 +383,9 @@
 			isa = PBXGroup;
 			children = (
 				2C7A54EC2450BB400086AB73 /* MessagesViewController.swift */,
+				2C9CA4062455E715004ED8A7 /* messagesListStruct.swift */,
+				2C9CA4022455DEA9004ED8A7 /* ChatListTableViewCell.swift */,
+				2C9CA4032455DEA9004ED8A7 /* ChatListTableViewCell.xib */,
 				2C7A54ED2450BB400086AB73 /* messagesNavControler.swift */,
 			);
 			path = Messages;
@@ -401,10 +410,10 @@
 		2C7A54F32450BB400086AB73 /* People */ = {
 			isa = PBXGroup;
 			children = (
+				2C7A54F72450BB400086AB73 /* PeopleViewController.swift */,
 				2C7A54F42450BB400086AB73 /* peopleNavController.swift */,
 				2C7A54F52450BB400086AB73 /* CustomSegmentedContrl.swift */,
 				2C7A54F62450BB400086AB73 /* FeedVC.swift */,
-				2C7A54F72450BB400086AB73 /* PeopleViewController.swift */,
 			);
 			path = People;
 			sourceTree = "<group>";
@@ -551,6 +560,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C7A54812450B67A0086AB73 /* LaunchScreen.storyboard in Resources */,
+				2C9CA4052455DEA9004ED8A7 /* ChatListTableViewCell.xib in Resources */,
 				2C7A547E2450B67A0086AB73 /* Assets.xcassets in Resources */,
 				2C7A547C2450B6780086AB73 /* Main.storyboard in Resources */,
 			);
@@ -703,9 +713,11 @@
 				2C7A54C32450B98C0086AB73 /* deeplinkParser.swift in Sources */,
 				2C7A54C12450B98C0086AB73 /* titles.swift in Sources */,
 				2C7A550F2450BBDD0086AB73 /* SplashViewController.swift in Sources */,
+				2C9CA4072455E715004ED8A7 /* messagesListStruct.swift in Sources */,
 				2C7A54C22450B98C0086AB73 /* deeplinkNavigator.swift in Sources */,
 				2C7A550B2450BB400086AB73 /* testVC1.swift in Sources */,
 				2C7A54DB2450BA630086AB73 /* RequestsListView.swift in Sources */,
+				2C9CA4042455DEA9004ED8A7 /* ChatListTableViewCell.swift in Sources */,
 				2C7A55092450BB400086AB73 /* testVC2.swift in Sources */,
 				2C7A54C52450B98C0086AB73 /* shortcutParser.swift in Sources */,
 				2C7A54BC2450B98C0086AB73 /* FeedFetcher.swift in Sources */,

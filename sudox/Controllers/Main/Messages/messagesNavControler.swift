@@ -13,12 +13,16 @@ class messagesNavControler: UINavigationController {
     var segmentControl : UISegmentedControl!
     override func viewDidLoad() {
         
-        //let navBarAppearance = UINavigationBarAppearance()
-        self.navigationItem.titleView = segmentControl
-        setupSegmentControl()
-    }
-    func setupSegmentControl() {
-        //segmentControl.insertSegment(withTitle: "Hello", at: 2, animated: true)
-//        segmentControl.backgroundColor=UIColor.systemBlue
-    }
+     //let navBarAppearance = UINavigationBarAppearance()
+            self.navigationItem.titleView = segmentControl
+        
+            let navBarAppearance = UINavigationBarAppearance()
+            navBarAppearance.configureWithOpaqueBackground()
+            navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.label]
+            navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.label]
+            navBarAppearance.backgroundColor = UIColor.tertiarySystemBackground
+            navigationBar.standardAppearance = navBarAppearance
+            navigationBar.scrollEdgeAppearance = navBarAppearance
+            self.navigationController?.popToRootViewController(animated: true)
+}
 }

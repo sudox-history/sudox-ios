@@ -10,38 +10,72 @@ import UIKit
 import EasyPeasy
 
 class MessagesViewController : UIViewController {
+    var timer = Timer()
+    var chatsListData = [messagesListStruct]()//пока что статичный массив, потом подключаем веб..
+    lazy var tableView: UITableView = addTableView()
     
-//    lazy var tableView: UITableView = addTableView()
-//    
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        
-//    }
-//    private func addTableView() -> UITableView {
-//        let nib = UINib(nibName: "issueTableViewCell", bundle: nil)
-//        let tableView = UITableView()
-//        tableView.register(nib, forCellReuseIdentifier: "issueTableViewCell")
-//        tableView.dataSource = self
-//        tableView.delegate = self
-//        tableView.backgroundColor = .systemBackground
-//        self.view.addSubview(tableView)
-//        tableView.easy.layout([Bottom(10).to(self.view.safeAreaLayoutGuide, .bottom),Top(8).to(self.view.safeAreaLayoutGuide, .top),Left(0),Right(0)])
-//        tableView.tableFooterView = UIView()
-//        return tableView
-//    }
-//}
-//extension MessagesViewController : UITableViewDelegate {
-//    
-//}
-//extension MessagesViewController : UITableViewDataSource {
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        
-//    }
-//    
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        
-//    }
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        
-//    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupView()
+        timer = Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(updateTableView), userInfo: nil, repeats: true);
+        chatsListData.append(messagesListStruct(name: "Никита Казанцев", id: "USAxWDpxyWy2KQBqrs6gqqJ7mc2E84wz", lastMessage: "О, опять обогнали Android в прогрессе", timeOfLastMessage: Date()))
+        chatsListData.append(messagesListStruct(name: "Никита Казанцев", id: "buFKx4meCBN3LtGmACJs55vCFca8Guhc", lastMessage: "О, опять обогнали Android в прогрессе", timeOfLastMessage: Date()))
+        tableView.reloadData()
+    }
+    
+    private func setupView() {
+        view.backgroundColor = UIColor.systemBackground
+        self.title = "Messages"
+    }
+    
+    private func addTableView() -> UITableView {
+        let nib = UINib(nibName: "ChatListTableViewCell", bundle: nil)
+        let tableView = UITableView()
+        tableView.register(nib, forCellReuseIdentifier: "ChatListTableViewCell")
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.backgroundColor = .systemBackground
+        self.view.addSubview(tableView)
+        tableView.easy.layout([Bottom(10).to(self.view.safeAreaLayoutGuide, .bottom),Top(8).to(self.view.safeAreaLayoutGuide, .top),Left(0),Right(0)])
+        //tableView.tableFooterView = UIView()
+        return tableView
+    }
+    private func getCurrentDate()-> Date {
+        let date = Date()
+        return date
+    }
+    @objc private func updateTableView() {
+        tableView.reloadData()
+    }
+    
+    
+    
+}
+extension MessagesViewController : UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+}
+extension MessagesViewController : UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return chatsListData.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ChatListTableViewCell", for: indexPath) as! ChatListTableViewCell
+        let dateString = chatsListData[indexPath.row].timeOfLastMessage.timeAgoSinceDate
+        cell.timeOfLastMessageLabel.text = "now"//dateString()
+        cell.nameLabel.text = chatsListData[indexPath.row].name
+        cell.lastMessageLabel.text = chatsListData[indexPath.row].lastMessage
+        
+        return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }
