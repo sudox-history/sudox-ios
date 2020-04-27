@@ -6,8 +6,11 @@
 //  Copyright © 2020 Sudox. All rights reserved.
 //
 import UIKit
-
+import SwiftKeychainWrapper
+import Starscream
 final class RootRouter {
+    
+    var Registrationsocket = Network.shared
     func chooseVC () -> UIViewController { //
         let new: UIViewController
         if UserDefaults.standard.bool(forKey: "LOGGED_IN") {
@@ -15,7 +18,8 @@ final class RootRouter {
             new = MainTabBarController()
         } else {
             print("NOT LOGGED_IN")
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+
+            
             let loginVc = loginNavController(rootViewController: loginPhoneFormVC())
             new = loginVc
         }
@@ -27,6 +31,8 @@ final class RootRouter {
 //        keyWindow?.rootViewController = new
         return new
     }
+
+    
 }
 
 //class RootViewController :UIViewController {

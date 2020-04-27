@@ -9,6 +9,7 @@ PODS:
     - PhoneNumberKit/PhoneNumberKitCore
   - RevealingSplashView (0.6.0)
   - Starscream (4.0.0)
+  - SwiftKeychainWrapper (3.4.0)
 
 DEPENDENCIES:
   - EasyPeasy
@@ -16,6 +17,7 @@ DEPENDENCIES:
   - PhoneNumberKit
   - RevealingSplashView
   - Starscream
+  - SwiftKeychainWrapper
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -24,6 +26,7 @@ SPEC REPOS:
     - PhoneNumberKit
     - RevealingSplashView
     - Starscream
+    - SwiftKeychainWrapper
 
 SPEC CHECKSUMS:
   EasyPeasy: 19a84ef8f8bbcf925b9fecc29d1d78b7dab96718
@@ -31,7 +34,8 @@ SPEC CHECKSUMS:
   PhoneNumberKit: df411d46177d1492da84e10b6c093846dd861452
   RevealingSplashView: 40c5a770894459736acdc95655eeba0dd30ce91c
   Starscream: 04b26f02727e10a002e6b5d21b188ba0d049910b
+  SwiftKeychainWrapper: 6fc49fbf7d4a6b0772917acb0e53a1639f6078d6
 
-PODFILE CHECKSUM: 18e1a00b738e6953df5c234c75bb6d93e7110d78
+PODFILE CHECKSUM: c8341cad05739b5e17c82e0d6381c7e0d2e32496
 
 COCOAPODS: 1.7.5

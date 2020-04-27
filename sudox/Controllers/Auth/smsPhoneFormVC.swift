@@ -56,6 +56,7 @@ class smsPhoneFormVC: UIViewController {
         CodeTextField.configure()
         CodeTextField.easy.layout([Left(16),Right(16),Top(40).to(descriptionLabel), Height(50)])
         
+        CodeTextField.textContentType = .oneTimeCode
         // данная часть кода срабатывает лишь когда вводится последняя цифра кода
         CodeTextField.didEnteredLastDigit = { [weak self] code in
             

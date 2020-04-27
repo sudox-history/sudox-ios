@@ -134,3 +134,25 @@ extension UIImageView {
       self.layer.masksToBounds = true
    }
 }
+
+extension NSDate {
+    
+    /// This function returns boolean value indicating if token has expired .
+    ///
+    /// ```
+    /// isExpired(dateToCompare, expirationTime) // true
+    /// ```
+    /// - Returns: returns boolean value indicating if token has expired .
+    func isExpired(dateToCompare: NSDate, expirationTime: TimeInterval) -> Bool {
+        
+        // seconds between two dates
+        let dateSubstraction = (NSInteger(self.timeIntervalSince(dateToCompare as Date )) / 60 ) % 60
+        
+        if (dateSubstraction <= NSInteger(expirationTime)) // if
+        {
+            return false
+        }
+        
+        return true
+    }
+}

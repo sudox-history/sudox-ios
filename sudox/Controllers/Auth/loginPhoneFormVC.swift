@@ -11,6 +11,7 @@ import UIKit
 import EasyPeasy
 import PhoneNumberKit
 import Starscream
+import SwiftKeychainWrapper
 
 class loginPhoneFormVC: UIViewController {
     
@@ -144,6 +145,15 @@ class loginPhoneFormVC: UIViewController {
             // открываем последующий экран регистрации (верификация телефона)
             if (!user_exists)
             {
+                sk.SecWebSocketAccept = (data["data"] as! [String: Any])["auth_token"] as! String
+                // записываем ключ сессии
+                KeychainWrapper.standard.set(sk.SecWebSocketAccept,forKey: "registrationToken")
+                print("ключ сессии записан в keychain")
+                
+                // вносим время записи, чтобы потом сверять, а не просрочился ли key
+                KeychainWrapper.standard.set(NSDate.now as NSCoding,forKey: "registrationTokenExpiryDate")
+                print("ключ сессии записан в keychain")
+                
                 let vc = smsPhoneFormVC()
                 vc.modalPresentationStyle = .overFullScreen
                 self.navigationController?.pushViewController(vc, animated: true)
@@ -181,7 +191,39 @@ class loginPhoneFormVC: UIViewController {
         }
     }
     
-    
+    public func RestoreSession()
+    {
+        // must check if there is any need to restore session
+        //getting 'retrievedToken' - registration token
+        if let retrievedToken: String = KeychainWrapper.standard.string(forKey: "registrationToken")
+        {
+            print("registrationToken найдено в базе")
+            if let retrievedTokenDate: NSDate = KeychainWrapper.standard.object(forKey: "registrationTokenExpiryDate") as? NSDate
+            {
+                print("registrationTokenExpiryDate найдено в базе")
+                let now =  NSDate.now as NSDate;
+                
+                if (now.isExpired(dateToCompare: (retrievedTokenDate), expirationTime: TimeInterval(5.0 * 60.0)))
+                {
+                    print("ключ expired. невозможно восстановить сессию")
+                    // expired, should have deleted key from keychain
+                    
+                }
+                else
+                {
+                    // not expired, can reactivate session
+                    if (sk.restoreRegSession(retrievedToken))
+                    {
+                        print("READY TO LOAD VIEW AFTER RESTORATION")
+                    }
+                    else
+                    {
+                        print("restoration failed")
+                    }
+                }
+            }
+        }
+    }
 }
 
 extension loginPhoneFormVC: WebSocketDelegate{
@@ -191,6 +233,8 @@ extension loginPhoneFormVC: WebSocketDelegate{
         case .connected(let headers):
             sk.isConnected = true
             print("websocket is connected: \(headers)")
+            RestoreSession()
+            
         case .disconnected(let reason, let code):
             sk.isConnected = false
             print("websocket is disconnected: \(reason) with code: \(code)")

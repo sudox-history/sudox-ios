@@ -9,6 +9,7 @@ target 'sudox' do
   pod 'RevealingSplashView'
   pod 'Starscream'
   pod 'MaterialDesignWidgets'
+  pod 'SwiftKeychainWrapper'
 
   target 'sudoxTests' do
     inherit! :search_paths
@@ -18,6 +19,7 @@ target 'sudox' do
     pod 'RevealingSplashView'
     pod 'Starscream'
     pod 'MaterialDesignWidgets'
+    pod 'SwiftKeychainWrapper'
   end
 
   target 'sudoxUITests' do
@@ -28,6 +30,7 @@ target 'sudox' do
     pod 'RevealingSplashView'
     pod 'Starscream'
     pod 'MaterialDesignWidgets'
+    pod 'SwiftKeychainWrapper'
   end
 
 end
