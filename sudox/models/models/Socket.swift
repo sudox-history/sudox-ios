@@ -77,7 +77,8 @@ class Network {
                 break
             case .disconnected(_, _):
                 break
-            case .binary(_):
+            case .binary(_ ):
+                print(1)
                 break
             case .pong(_):
                 break

@@ -65,6 +65,12 @@
 		2C9CA4052455DEA9004ED8A7 /* ChatListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C9CA4032455DEA9004ED8A7 /* ChatListTableViewCell.xib */; };
 		2C9CA4072455E715004ED8A7 /* messagesListStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9CA4062455E715004ED8A7 /* messagesListStruct.swift */; };
 		48740754F61DBA74CD73B2A0 /* libPods-sudoxUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C5FF6E997CFF37B48DB99FE9 /* libPods-sudoxUITests.a */; };
+		801F102524576CC600C966EE /* createRg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801F102424576CC600C966EE /* createRg.swift */; };
+		8024508A245770DA00DDCCA4 /* checkCodeRg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80245089245770DA00DDCCA4 /* checkCodeRg.swift */; };
+		8024508C245772B400DDCCA4 /* signUpRg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8024508B245772B400DDCCA4 /* signUpRg.swift */; };
+		8024508E2457753C00DDCCA4 /* verifyRg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8024508D2457753C00DDCCA4 /* verifyRg.swift */; };
+		80245090245775FC00DDCCA4 /* respondVerifyRg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8024508F245775FC00DDCCA4 /* respondVerifyRg.swift */; };
+		802450922457768B00DDCCA4 /* signInRg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802450912457768B00DDCCA4 /* signInRg.swift */; };
 		992F4A81A707776FC2B5E4AB /* libPods-sudoxTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC465278A1D9AD54711FE19 /* libPods-sudoxTests.a */; };
 /* End PBXBuildFile section */
 
@@ -153,6 +159,12 @@
 		4DA2538F55F1484BFE2553EA /* Pods-sudox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sudox.debug.xcconfig"; path = "Target Support Files/Pods-sudox/Pods-sudox.debug.xcconfig"; sourceTree = "<group>"; };
 		525EEF40297AF2F3EA3941E8 /* Pods-sudox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sudox.release.xcconfig"; path = "Target Support Files/Pods-sudox/Pods-sudox.release.xcconfig"; sourceTree = "<group>"; };
 		5DC465278A1D9AD54711FE19 /* libPods-sudoxTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-sudoxTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		801F102424576CC600C966EE /* createRg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createRg.swift; sourceTree = "<group>"; };
+		80245089245770DA00DDCCA4 /* checkCodeRg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = checkCodeRg.swift; sourceTree = "<group>"; };
+		8024508B245772B400DDCCA4 /* signUpRg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUpRg.swift; sourceTree = "<group>"; };
+		8024508D2457753C00DDCCA4 /* verifyRg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = verifyRg.swift; sourceTree = "<group>"; };
+		8024508F245775FC00DDCCA4 /* respondVerifyRg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = respondVerifyRg.swift; sourceTree = "<group>"; };
+		802450912457768B00DDCCA4 /* signInRg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signInRg.swift; sourceTree = "<group>"; };
 		81EE7308DA2B047C80ABC9D4 /* Pods-sudoxTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sudoxTests.release.xcconfig"; path = "Target Support Files/Pods-sudoxTests/Pods-sudoxTests.release.xcconfig"; sourceTree = "<group>"; };
 		B257C54CB21C96F183C898E3 /* Pods-sudoxTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sudoxTests.debug.xcconfig"; path = "Target Support Files/Pods-sudoxTests/Pods-sudoxTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B54C6AF9210B34D8D37036CD /* Pods-sudoxUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sudoxUITests.release.xcconfig"; path = "Target Support Files/Pods-sudoxUITests/Pods-sudoxUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -259,6 +271,7 @@
 				2C7A54B12450B98C0086AB73 /* titles.swift */,
 				2C7A54B22450B98C0086AB73 /* DeepLink */,
 				2C7A54B72450B98C0086AB73 /* Socket.swift */,
+				801F102624576D4400C966EE /* RegistrationMethods */,
 			);
 			name = models;
 			path = models/models;
@@ -356,10 +369,10 @@
 		2C7A54E52450BB400086AB73 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				2C7A54E92450BB400086AB73 /* loginNavController.swift */,
+				2C7A54E82450BB400086AB73 /* loginPhoneFormVC.swift */,
 				2C7A54E62450BB400086AB73 /* smsPhoneFormVC.swift */,
 				2C7A54E72450BB400086AB73 /* nicknamePickerVC.swift */,
-				2C7A54E82450BB400086AB73 /* loginPhoneFormVC.swift */,
-				2C7A54E92450BB400086AB73 /* loginNavController.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -424,6 +437,19 @@
 				2C7A54FA2450BB400086AB73 /* FriendsListVC.swift */,
 			);
 			path = Friends;
+			sourceTree = "<group>";
+		};
+		801F102624576D4400C966EE /* RegistrationMethods */ = {
+			isa = PBXGroup;
+			children = (
+				801F102424576CC600C966EE /* createRg.swift */,
+				80245089245770DA00DDCCA4 /* checkCodeRg.swift */,
+				8024508B245772B400DDCCA4 /* signUpRg.swift */,
+				8024508D2457753C00DDCCA4 /* verifyRg.swift */,
+				8024508F245775FC00DDCCA4 /* respondVerifyRg.swift */,
+				802450912457768B00DDCCA4 /* signInRg.swift */,
+			);
+			path = RegistrationMethods;
 			sourceTree = "<group>";
 		};
 		E5A119E494AFD877DB6CB524 /* Pods */ = {
@@ -718,6 +744,8 @@
 				2C7A550B2450BB400086AB73 /* testVC1.swift in Sources */,
 				2C7A54DB2450BA630086AB73 /* RequestsListView.swift in Sources */,
 				2C9CA4042455DEA9004ED8A7 /* ChatListTableViewCell.swift in Sources */,
+				801F102524576CC600C966EE /* createRg.swift in Sources */,
+				80245090245775FC00DDCCA4 /* respondVerifyRg.swift in Sources */,
 				2C7A55092450BB400086AB73 /* testVC2.swift in Sources */,
 				2C7A54C52450B98C0086AB73 /* shortcutParser.swift in Sources */,
 				2C7A54BC2450B98C0086AB73 /* FeedFetcher.swift in Sources */,
@@ -740,9 +768,11 @@
 				2C7A55112450BD230086AB73 /* DebagVC.swift in Sources */,
 				2C7A55052450BB400086AB73 /* peopleNavController.swift in Sources */,
 				2C7A54E02450BA630086AB73 /* Feed.swift in Sources */,
+				8024508C245772B400DDCCA4 /* signUpRg.swift in Sources */,
 				2C7A54BD2450B98C0086AB73 /* Post.swift in Sources */,
 				2C7A54FF2450BB400086AB73 /* loginNavController.swift in Sources */,
 				2C7A54DA2450BA630086AB73 /* FriendListItemView.swift in Sources */,
+				8024508E2457753C00DDCCA4 /* verifyRg.swift in Sources */,
 				2C7A54C62450B98C0086AB73 /* Socket.swift in Sources */,
 				2C7A55132450BD3D0086AB73 /* LaunchScreenVC.swift in Sources */,
 				2C7A550A2450BB400086AB73 /* FriendsListVC.swift in Sources */,
@@ -750,6 +780,7 @@
 				2C7A54DC2450BA630086AB73 /* StoryItem.swift in Sources */,
 				2C7A54D82450BA630086AB73 /* MaybeYouKnowCardView.swift in Sources */,
 				2C7A55022450BB400086AB73 /* WorldViewController.swift in Sources */,
+				802450922457768B00DDCCA4 /* signInRg.swift in Sources */,
 				2C7A55062450BB400086AB73 /* CustomSegmentedContrl.swift in Sources */,
 				2C7A54D92450BA630086AB73 /* FriendsListView.swift in Sources */,
 				2C7A54772450B6780086AB73 /* SceneDelegate.swift in Sources */,
@@ -757,6 +788,7 @@
 				2C7A54BF2450B98C0086AB73 /* FriendFetcher.swift in Sources */,
 				2C7A54DF2450BA630086AB73 /* PostView.swift in Sources */,
 				2C7A54BA2450B98C0086AB73 /* feed_whole.swift in Sources */,
+				8024508A245770DA00DDCCA4 /* checkCodeRg.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

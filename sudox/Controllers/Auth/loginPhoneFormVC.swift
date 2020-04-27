@@ -12,12 +12,10 @@ import EasyPeasy
 import PhoneNumberKit
 import Starscream
 import SwiftKeychainWrapper
+import MessagePacker
 
 class loginPhoneFormVC: UIViewController {
-    
-    //socket
-    //var socket: WebSocket!
-    
+
     lazy var sk = Network.shared
     
     var descriptionLabel = UILabel()
@@ -97,6 +95,12 @@ class loginPhoneFormVC: UIViewController {
         {
             let rawNumber = self.phoneNumberTextField.text!.filter { (char) -> Bool in return char.isNumber }
             
+            //MsgPack упаковка для последующей отправк data (массив байтов) на сервер
+            let dict = createMethod(method_name: "auth.create", data: createData(user_phone: rawNumber))
+            let data = try! MessagePackEncoder().encode(dict)
+            print([UInt8](data))
+            
+            // старый вариант отправки json'а, надо заменть на data
             sk.send("{\"method_name\": \"auth.create\",\"data\": {\"user_phone\": \"" + rawNumber + "\"}}")
             
             // если сервер ответил нам на наш телефон

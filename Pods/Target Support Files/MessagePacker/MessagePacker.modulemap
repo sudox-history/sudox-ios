@@ -1,0 +1,6 @@
+module MessagePacker {
+  umbrella header "MessagePacker-umbrella.h"
+
+  export *
+  module * { export * }
+}
