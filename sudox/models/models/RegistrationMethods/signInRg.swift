@@ -10,7 +10,7 @@ import Foundation
 
 /// Авторизация пользователя
 public struct signInMethod: Codable {
-    var method_name: String = "auth.respondVerify"
+    var method_name: String = "auth.signIn"
     var data: signInData
 }
 
