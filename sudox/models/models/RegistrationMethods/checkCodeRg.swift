@@ -18,3 +18,14 @@ struct checkCodeData: Codable {
     var auth_id: String
     var auth_code: Int
 }
+
+struct checkCodeAnswer: Codable
+{
+    var method_name: String = "auth.checkCode"
+    var method_result: Int
+    var data: checkCodeDataAnswer? = nil
+}
+
+struct checkCodeDataAnswer: Codable {
+    //
+}

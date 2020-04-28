@@ -15,7 +15,7 @@ import SwiftKeychainWrapper
 import MessagePacker
 
 class loginPhoneFormVC: UIViewController {
-
+    
     lazy var sk = Network.shared
     
     var descriptionLabel = UILabel()
@@ -98,81 +98,29 @@ class loginPhoneFormVC: UIViewController {
             //MsgPack упаковка для последующей отправк data (массив байтов) на сервер
             let dict = createMethod(method_name: "auth.create", data: createData(user_phone: rawNumber))
             let data = try! MessagePackEncoder().encode(dict)
-            print([UInt8](data))
-            
-            // старый вариант отправки json'а, надо заменть на data
-            sk.send("{\"method_name\": \"auth.create\",\"data\": {\"user_phone\": \"" + rawNumber + "\"}}")
-            
-            // если сервер ответил нам на наш телефон
-            sk.websocket?.onEvent = { event in
-                switch event {
-                // handle events just like above...
-                case .text(let string):
-                    // читаем коды ответа и в случае положительного результата переходим на др экран
-                    let data: [String: Any]  = string.convertToDictionary()!
-                    self.performActionAfterEvent(data: data)
-                    
-                case .connected(_):
-                    break
-                case .disconnected(_, _):
-                    break
-                case .binary(_):
-                    break
-                case .pong(_):
-                    break
-                case .ping(_):
-                    break
-                case .error(_):
-                    break
-                case .viablityChanged(_):
-                    break
-                case .reconnectSuggested(_):
-                    break
-                case .cancelled:
-                    break
-                }
-            }
+
+            // отправляем телефон на сервер.
+            sk.send(data)
+
         }
         else{ print("Error in telephone")}
     }
     
-    @objc func performActionAfterEvent(data: [String: Any]) -> Void
+    func performActionAfterSuccessEvent(ansObj: createAnswer) -> Void
     {
-        switch (data["result"] as! Int )
+        if (ansObj.data!.user_exists) // пользователь по этому телефону зарегистрирован
         {
-        case 0:
-            print("OK code recieved (telephone send to server)")
-            // есть ли такой пользователь по этому номеру телефона?
-            let user_exists = (data["data"] as! [String: Any])["user_exists"] as! Bool
-
-            // если сервер ответил, что такого пользователя не существует
-            // открываем последующий экран регистрации (верификация телефона)
-            if (!user_exists)
-            {
-                sk.SecWebSocketAccept = (data["data"] as! [String: Any])["auth_token"] as! String
-                // записываем ключ сессии
-                KeychainWrapper.standard.set(sk.SecWebSocketAccept,forKey: "registrationToken")
-                print("ключ сессии записан в keychain")
-                
-                // вносим время записи, чтобы потом сверять, а не просрочился ли key
-                KeychainWrapper.standard.set(NSDate.now as NSCoding,forKey: "registrationTokenExpiryDate")
-                print("ключ сессии записан в keychain")
-                
-                let vc = smsPhoneFormVC()
-                vc.modalPresentationStyle = .overFullScreen
-                self.navigationController?.pushViewController(vc, animated: true)
-                //(smsPhoneFormVC(), sender: nil)
-            }
-        case 1:
-            print("SERVICE_UNAVAILABLE recieved (telephone send to server)")
-        case 3:
-            print("REQUEST_FORMAT_INVALID recieved (telephone send to server)")
-        case 104:
-            print("AUTH_ALREADY_EXISTS recieved (telephone send to server)")
-        case 108:
-            print("USER_PHONE_BANNED recieved (telephone send to server)")
-        default:
-            print("unknown code recieved (telephone send to server)")
+            // пробрасываем на авторизацию
+        }
+        else //пользователя не существует. Регистрируем
+        {
+            // сохраняем auth_id
+            sk.auth_id = ansObj.data!.auth_id
+            
+            // пробрасываем дальше по регистрации
+            let vc = smsPhoneFormVC()
+            vc.modalPresentationStyle = .overFullScreen
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     
@@ -188,12 +136,6 @@ class loginPhoneFormVC: UIViewController {
         
     }
     
-    override func prepare (for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "loginToSmsVerification" {
-            let controller = segue.destination as! smsPhoneFormVC
-            controller.telephone = phoneNumberTextField.text!
-        }
-    }
     
     public func RestoreSession()
     {
@@ -216,14 +158,16 @@ class loginPhoneFormVC: UIViewController {
                 else
                 {
                     // not expired, can reactivate session
-                    if (sk.restoreRegSession(retrievedToken))
-                    {
-                        print("READY TO LOAD VIEW AFTER RESTORATION")
-                    }
-                    else
-                    {
-                        print("restoration failed")
-                    }
+                    /*
+                     if (sk.restoreRegSession(retrievedToken))
+                     {
+                     print("READY TO LOAD VIEW AFTER RESTORATION")
+                     }
+                     else
+                     {
+                     print("restoration failed")
+                     }
+                     */
                 }
             }
         }
@@ -237,7 +181,7 @@ extension loginPhoneFormVC: WebSocketDelegate{
         case .connected(let headers):
             sk.isConnected = true
             print("websocket is connected: \(headers)")
-            RestoreSession()
+            //RestoreSession()
             
         case .disconnected(let reason, let code):
             sk.isConnected = false
@@ -245,7 +189,37 @@ extension loginPhoneFormVC: WebSocketDelegate{
         case .text(let string):
             print("Received text: \(string)")
         case .binary(let data):
-            print("Received data: \(data.count)")
+            print("Received data: \([UInt8](data))")
+            do {
+                let decoded = try MessagePackDecoder().decode(createAnswer.self, from: data)
+                
+                switch decoded.method_result {
+                case 0: // OK
+                    performActionAfterSuccessEvent(ansObj: decoded)
+                    break
+                case 1: // SERVICE_UNAVAILABLE
+                    handleCreateMethodError(1, message: "SERVICE_UNAVAILABLE")
+                    break
+                case 2: // ACCESS_DENIED
+                    handleCreateMethodError(2, message: "ACCESS_DENIED")
+                    break
+                case 3: // FORMAT_INVALID
+                    handleCreateMethodError(3, message: "FORMAT_INVALID")
+                    break
+                case 102: // AUTH_EXISTS
+                    handleCreateMethodError(102, message: "AUTH_EXISTS")
+                    break
+                case 107: // USER_PHONE_BANNED
+                    handleCreateMethodError(107, message: "USER_PHONE_BANNED")
+                    break
+                default: // UNEXPECTED ERROR
+                    handleCreateMethodError(-1, message: "UNEXPECTED_ERROR")
+                    break
+                }
+            }
+            catch {
+                // error. невозможно прочитать ответ на валидность телефона телефон
+            }
         case .ping(_):
             break
         case .pong(_):
@@ -271,5 +245,20 @@ extension loginPhoneFormVC: WebSocketDelegate{
         } else {
             print("websocket[Login_PHONE_FORM] encountered an error")
         }
+    }
+    
+    func handleCreateMethodError(_ error: Int, message: String)
+    {
+        
+        let alert = UIAlertController(title: "Error: " + String(error), message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion:{
+           alert.view.superview?.isUserInteractionEnabled = true
+           alert.view.superview?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.dismissOnTapOutside)))
+        })
+    }
+    
+    @objc func dismissOnTapOutside(){
+       self.dismiss(animated: true, completion: nil)
     }
 }

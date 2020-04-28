@@ -17,3 +17,15 @@ public struct createMethod: Codable {
 struct createData: Codable {
     var user_phone: String
 }
+
+struct createAnswer: Codable
+{
+    var method_name: String = "auth.create"
+    var method_result: Int
+    var data: createDataAnswer? = nil
+}
+
+struct createDataAnswer: Codable {
+    var auth_id: String
+    var user_exists: Bool
+}

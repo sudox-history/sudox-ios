@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 import EasyPeasy
 import Starscream
+import MessagePacker
+
 class smsPhoneFormVC: UIViewController {
     var telephone: String = ""
     var descriptionLabel = UILabel()
@@ -57,71 +59,27 @@ class smsPhoneFormVC: UIViewController {
         CodeTextField.easy.layout([Left(16),Right(16),Top(40).to(descriptionLabel), Height(50)])
         
         CodeTextField.textContentType = .oneTimeCode
+        
         // данная часть кода срабатывает лишь когда вводится последняя цифра кода
         CodeTextField.didEnteredLastDigit = { [weak self] code in
             
-            self!.sk.send("{\"method_name\": \"auth.checkCode\",\"data\": {\"auth_code\": " + (self!.CodeTextField.fullStr) + "}}")
+            let dict = checkCodeMethod(method_name: "auth.checkCode", data: checkCodeData(auth_id: self!.sk.auth_id, auth_code: Int(self!.CodeTextField.fullStr) ?? 0 ))
             
-            // если сервер ответил нам на наш код СМС
-            self!.sk.websocket?.onEvent = { event in
-                switch event {
-                // handle events just like above...
-                case .text(let string):
-                    // читаем коды ответа и в случае положительного результата переходим на др экран
-                    let data: [String: Any]  = string.convertToDictionary()!
-                    self!.performActionAfterEvent(data: data)
-                    
-                case .connected(_):
-                    break
-                case .disconnected(_, _):
-                    break
-                case .binary(_):
-                    break
-                case .pong(_):
-                    break
-                case .ping(_):
-                    break
-                case .error(_):
-                    break
-                case .viablityChanged(_):
-                    break
-                case .reconnectSuggested(_):
-                    break
-                case .cancelled:
-                    break
-                }
-            }
+            
+            let data = try! MessagePackEncoder().encode(dict)
+            
+            // отправляем код смс на сервер
+            self!.sk.send(data)
+
         }
     }
     
-    @objc func performActionAfterEvent(data: [String:Any]) -> Void{
-
-        switch (data["result"] as! Int )
-        {
-        case 0:
-            print("OK code recieved (code send to server)")
-            
+    func performActionAfterSuccessEvent(data: checkCodeAnswer) -> Void {
+        
             let vc = nicknamePickerVC()
             vc.modalPresentationStyle = .overFullScreen
             self.show(vc, sender: nil)
-            
-        case 1:
-            print("SERVICE_UNAVAILABLE recieved (telephone send to server)")
-        case 3:
-            print("REQUEST_FORMAT_INVALID recieved (telephone send to server)")
-        case 102:
-            print("AUTH_SESSION_NO_LONGER_VALID recieved (telephone send to server)")
-        case 106:
-            print("AUTH_CODE_INVALID recieved (telephone send to server)")
-            let alert = UIAlertController(title: "Invalid code", message: "Verification code is invalid or has expired. Try again", preferredStyle: .alert)
-            
-            present(alert, animated: true, completion:{
-               alert.view.superview?.isUserInteractionEnabled = true
-               alert.view.superview?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.dismissOnTapOutside)))
-            })
-        default:
-            print("unknown code recieved (telephone send to server)")
-        }
+
     }
     
     @objc func rightNavBarItemTapped(){
@@ -145,7 +103,39 @@ extension smsPhoneFormVC: WebSocketDelegate{
         case .text(let string):
             print("Received3 text: \(string)")
         case .binary(let data):
-            print("Received3 data: \(data.count)")
+            print("Received SMSFORM data: \([UInt8](data))")
+            do {
+                let decoded = try MessagePackDecoder().decode(checkCodeAnswer.self, from: data)
+                print(decoded)
+                
+                switch decoded.method_result {
+                case 0: // OK
+                    performActionAfterSuccessEvent(data: decoded)
+                    break
+                case 1: // SERVICE_UNAVAILABLE
+                    handleCheckCodeMethodError(1, message: "SERVICE_UNAVAILABLE")
+                    break
+                case 2: // ACCESS_DENIED
+                    handleCheckCodeMethodError(2, message: "ACCESS_DENIED")
+                    break
+                case 3: // FORMAT_INVALID
+                    handleCheckCodeMethodError(3, message: "FORMAT_INVALID")
+                    break
+                case 101: // AUTH_NOT_FOUND
+                    handleCheckCodeMethodError(101, message: "AUTH_NOT_FOUND")
+                    break
+                case 103: // AUTH_DROPPED
+                    handleCheckCodeMethodError(103, message: "AUTH_DROPPED")
+                    break
+                case 105: // AUTH_CODE_INVALID
+                    handleCheckCodeMethodError(103, message: "AUTH_CODE_INVALID")
+                    break
+                default: // UNEXPECTED ERROR
+                    handleCheckCodeMethodError(-1, message: "UNEXPECTED_ERROR")
+                    break
+                }
+            }
+            catch {}
         case .ping(_):
             break
         case .pong(_):
@@ -172,4 +162,16 @@ extension smsPhoneFormVC: WebSocketDelegate{
             print("websocket[SMS_PHONE_FORM] encountered an error")
         }
     }
+    
+    func handleCheckCodeMethodError(_ error: Int, message: String)
+    {
+        
+        let alert = UIAlertController(title: "Error: " + String(error), message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion:{
+           alert.view.superview?.isUserInteractionEnabled = true
+           alert.view.superview?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.dismissOnTapOutside)))
+        })
+    }
+
 }

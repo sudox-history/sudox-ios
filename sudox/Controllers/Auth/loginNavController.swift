@@ -8,10 +8,6 @@
 
 import Foundation
 import UIKit
-import SwiftKeychainWrapper
 
 class loginNavController: UINavigationController {
-    lazy var Registrationsocket = Network.shared
-    
-    
 }
