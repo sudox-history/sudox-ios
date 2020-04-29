@@ -21,6 +21,7 @@ class loginPhoneFormVC: UIViewController {
     var descriptionLabel = UILabel()
     var phoneNumberTextField = PhoneNumberTextField()
     let imageIcon = UIImageView(image: UIImage(systemName: "phone"))
+    let debagButton = NativeButton()
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -29,13 +30,25 @@ class loginPhoneFormVC: UIViewController {
         addDescriptionLabel()
         addImageIcon()
         addPhoneNumberTextField()
-        
+        addDebugButton()
         // подписываемся на делегат
         sk.websocket?.delegate = self
         
     }
-    
-    func addView() {
+    private func addDebugButton() {
+        if IsDebagDevice == false {return}
+        let button = debagButton
+        view.addSubview(button)
+        button.easy.layout([Top(64).to(phoneNumberTextField), Left(24).to(view.safeAreaLayoutGuide, .left), Right(24).to(view.safeAreaLayoutGuide, .right), Height(36)])
+        button.setTitle("Login")
+        button.addTarget(self, action: #selector(loginButtonPressed), for: .touchUpInside)
+    }
+    @objc func loginButtonPressed() {
+        UserDefaults.standard.set(true, forKey: "LOGGED_IN")
+        UIApplication.shared.windows.first?.rootViewController = SplashViewController()
+        self.navigationController?.popToRootViewController(animated: true)
+    }
+    private func addView() {
         self.view.backgroundColor = UIColor.systemBackground
         self.title = loginPhoneFormTitle
         

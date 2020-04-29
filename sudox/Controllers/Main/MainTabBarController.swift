@@ -65,9 +65,9 @@ class MainTabBarController: UITabBarController {
         
         let debagViewController = DebagVC()
         debagViewController.tabBarItem = UITabBarItem(title: "Debag", image: debagIcon, tag: 4)
-
-        let tabBarList = [firstViewController, secondViewController, fourthViewController, debagViewController] //thirdViewController, secondViewController
         
+        var tabBarList = [firstViewController, secondViewController, fourthViewController] //thirdViewController, secondViewController
+        if IsDebagDevice {tabBarList.append(debagViewController)}
 
         self.tabBar.tintColor = .globalGreen
         
