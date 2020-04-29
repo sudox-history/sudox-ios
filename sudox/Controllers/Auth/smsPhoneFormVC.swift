@@ -169,8 +169,8 @@ extension smsPhoneFormVC: WebSocketDelegate{
         let alert = UIAlertController(title: "Error: " + String(error), message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         present(alert, animated: true, completion:{
-           alert.view.superview?.isUserInteractionEnabled = true
-           alert.view.superview?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.dismissOnTapOutside)))
+            alert.view.superview?.isUserInteractionEnabled = true
+            alert.view.superview?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.dismissOnTapOutside)))
         })
     }
 

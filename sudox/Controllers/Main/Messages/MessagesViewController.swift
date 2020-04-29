@@ -17,7 +17,7 @@ class MessagesViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        timer = Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(updateTableView), userInfo: nil, repeats: true);
+        timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(updateTableView), userInfo: nil, repeats: true);
         chatsListData.append(messagesListStruct(name: "Никита Казанцев", id: "USAxWDpxyWy2KQBqrs6gqqJ7mc2E84wz", lastMessage: "О, опять обогнали Android в прогрессе", timeOfLastMessage: Date()))
         chatsListData.append(messagesListStruct(name: "Никита Казанцев", id: "buFKx4meCBN3LtGmACJs55vCFca8Guhc", lastMessage: "О, опять обогнали Android в прогрессе", timeOfLastMessage: Date()))
         tableView.reloadData()
@@ -67,14 +67,30 @@ extension MessagesViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChatListTableViewCell", for: indexPath) as! ChatListTableViewCell
         let dateString = chatsListData[indexPath.row].timeOfLastMessage.timeAgoSinceDate
-        cell.timeOfLastMessageLabel.text = "now"//dateString()
+        cell.timeOfLastMessageLabel.text = dateString()
         cell.nameLabel.text = chatsListData[indexPath.row].name
         cell.lastMessageLabel.text = chatsListData[indexPath.row].lastMessage
         
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let date = Date()
+        let calendar = Calendar.current
+        print(calendar.locale)
+        print(calendar.firstWeekday)
+        let weekday = calendar.component(.weekday, from: date)
+        print(weekday)
+        let exampleDate = Date().addingTimeInterval(-15000)
+        print ()
+        // ask for the full relative date
+        let formatter = RelativeDateTimeFormatter()
+        formatter.unitsStyle = .abbreviated
+
+        // get exampleDate relative to the current date
+        let relativeDate = formatter.localizedString(for: exampleDate, relativeTo: Date())
+
+        // print it out
+        print("Relative date is: \(relativeDate)")
         
         tableView.deselectRow(at: indexPath, animated: true)
     }

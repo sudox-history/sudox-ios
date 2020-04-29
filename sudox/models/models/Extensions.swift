@@ -140,28 +140,29 @@ extension Date { // time ago for
 
         // Day
         if let interval = Calendar.current.dateComponents([.day], from: fromDate, to: toDate).day, interval > 0  {
-
-            return interval == 1 ? "\(interval)" + " " + "day ago" : "\(interval)" + " " + "days ago"
+            if interval == 1 {
+                return "yesterday"
+            }
+            if interval <= 7 {
+                
+            }
+            return interval == 1 ? "yesterday" : "\(interval)" + " " + "days ago"
         }
 
         // Hours
         if let interval = Calendar.current.dateComponents([.hour], from: fromDate, to: toDate).hour, interval > 0 {
 
-            return interval == 1 ? "\(interval)" + " " + "hour ago" : "\(interval)" + " " + "hours ago"
+            return interval <= 12 ? "\(interval)" + " " + "h" : "\(interval)" + " " + "h"
         }
 
         // Minute
         if let interval = Calendar.current.dateComponents([.minute], from: fromDate, to: toDate).minute, interval > 0 {
 
-            return interval == 1 ? "\(interval)" + " " + "minute ago" : "\(interval)" + " " + "minutes ago"
+            return "\(interval)" + "m"
         }
         
-        if let interval = Calendar.current.dateComponents([.second], from: fromDate, to: toDate).second, interval > 0 {
-
-            return interval == 1 ? "\(interval)" + " " + "second ago" : "\(interval)" + " " + "seconds ago"
-        }
-
-        return "a moment ago"
+        // less then minute
+        return "now"
     }
 }
 extension UIImageView {
