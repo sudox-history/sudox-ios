@@ -20,3 +20,15 @@ struct signUpData: Codable {
     var user_nickname: String
     var user_key_hash: String
 }
+
+struct signUpAnswer: Codable
+{
+    var method_name: String = "auth.signUp"
+    var method_result: Int
+    var data: signUpDataAnswer? = nil
+}
+
+struct signUpDataAnswer: Codable {
+    var user_id: String
+    var user_secret: String
+}

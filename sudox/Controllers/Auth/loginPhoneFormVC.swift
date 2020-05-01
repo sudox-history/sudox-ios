@@ -16,12 +16,14 @@ import MessagePacker
 
 class loginPhoneFormVC: UIViewController {
     
-    lazy var sk = Network.shared
-    
     var descriptionLabel = UILabel()
     var phoneNumberTextField = PhoneNumberTextField()
     let imageIcon = UIImageView(image: UIImage(systemName: "phone"))
     let debagButton = NativeButton()
+    
+    // объект глобального сокета
+    lazy var sk = Network.shared
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -35,6 +37,19 @@ class loginPhoneFormVC: UIViewController {
         sk.websocket?.delegate = self
         
     }
+    
+    /// Эта функция добавляет кнопку дебага на экран
+    ///
+    /// ```
+    /// addDebugButton()
+    /// ```
+    ///
+    /// - Warning: для ее работы необходимо вставить uuid девайса в AppDelegate
+    ///
+    /// ```
+    /// detectDebagDevice() { let DEBAGUUIDS[] }
+    /// ```
+    /// - Returns: Void
     private func addDebugButton() {
         if IsDebagDevice == false {return}
         let button = debagButton
@@ -43,11 +58,7 @@ class loginPhoneFormVC: UIViewController {
         button.setTitle("Login")
         button.addTarget(self, action: #selector(loginButtonPressed), for: .touchUpInside)
     }
-    @objc func loginButtonPressed() {
-        UserDefaults.standard.set(true, forKey: "LOGGED_IN")
-        UIApplication.shared.windows.first?.rootViewController = SplashViewController()
-        self.navigationController?.popToRootViewController(animated: true)
-    }
+    
     private func addView() {
         self.view.backgroundColor = UIColor.systemBackground
         self.title = loginPhoneFormTitle
@@ -58,22 +69,40 @@ class loginPhoneFormVC: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: nextTitle, style: .plain, target: self, action: #selector(rightNavBarItemTapped))
         navigationItem.rightBarButtonItem?.isEnabled = false
         navigationItem.rightBarButtonItem?.tintColor = getColor().labelColor
-        
     }
-    func addDescriptionLabel() {
+    
+    /// добавляет label с поясняющим описанием на экран
+    /// ```
+    /// addDescriptionLabel()
+    /// ```
+    /// - Returns: Void
+    private func addDescriptionLabel() {
         self.view.addSubview(descriptionLabel)
         descriptionLabel.text = loginPhoneFormDescription
         descriptionLabel.easy.layout([Right(16),Top(15).to(view.safeAreaLayoutGuide, .top),Height(44)])
         descriptionLabel.setUpDescriptionLabel()
         descriptionLabel.isEnabled = false
     }
-    func addImageIcon() {
+    
+    /// добавляет контекстную мини-иконку
+    /// ```
+    /// addImageIcon()
+    /// ```
+    /// - Returns: Void
+    private func addImageIcon() {
         self.view.addSubview(imageIcon)
         //imageIcon.tintColor = .black
         imageIcon.easy.layout([Left(16).to(view.safeAreaLayoutGuide, .left),Right(16).to(descriptionLabel),Top(25).to(view.safeAreaLayoutGuide, .top),Height(24), Width(24)])
         
     }
-    func addPhoneNumberTextField() {
+    
+    /// добавляет форму ввода телефона
+    /// ```
+    /// addPhoneNumberTextField()
+    /// ```
+    /// - Warning: используется phoneNumberTextField из библиотеки PhoneNumberKit
+    /// - Returns: Void
+    private func addPhoneNumberTextField() {
         view.addSubview(phoneNumberTextField)
         
         self.phoneNumberTextField.becomeFirstResponder()
@@ -81,18 +110,15 @@ class loginPhoneFormVC: UIViewController {
         self.phoneNumberTextField.withFlag = true
         self.phoneNumberTextField.withExamplePlaceholder = true
         self.phoneNumberTextField.easy.layout([Left(16),Right(16),Top(40).to(descriptionLabel), Height(50)])
-        // регулирование расстояние кнопки с регионом от края
+
         self.phoneNumberTextField.flagButton.contentEdgeInsets.left = 20
-        // макс длина номера
         self.phoneNumberTextField.maxDigits = 15
         // phone auto-fill
         self.phoneNumberTextField.textContentType = .telephoneNumber
         self.phoneNumberTextField.autocorrectionType = .yes
         
         self.phoneNumberTextField.withDefaultPickerUI = true
-        
-        // закругление родительского view у поля ввода
-        // добавление серых рамок
+
         self.phoneNumberTextField.layer.cornerRadius = 5
         self.phoneNumberTextField.clipsToBounds = true
         self.phoneNumberTextField.layer.borderColor = UIColor.grayBorder.cgColor
@@ -100,8 +126,38 @@ class loginPhoneFormVC: UIViewController {
         self.phoneNumberTextField.addTarget(self, action: #selector(phoneNumberCorrection), for: .editingChanged)
     }
     
-    /// функция, срабатывающая при нажатии кнопки далее
-    @objc func rightNavBarItemTapped() {
+    /// Эта функция срабатывает при нажатии на кнопку  дебага для проброса в ленту
+    ///
+    /// ```
+    /// loginButtonPressed()
+    /// ```
+    ///
+    /// - Warning: для ее работы необходимо вставить функцию в selector
+    ///
+    /// ```
+    /// button.addTarget(self, action: #selector(loginButtonPressed), for: .touchUpInside)
+    /// ```
+    /// - Returns: Void
+    @objc private func loginButtonPressed() {
+        UserDefaults.standard.set(true, forKey: "LOGGED_IN")
+        UIApplication.shared.windows.first?.rootViewController = SplashViewController()
+        self.navigationController?.popToRootViewController(animated: true)
+    }
+    
+    
+    /// Эта функция срабатывает при нажатии на кнопку  "далее" в баре навигации
+    ///
+    /// ```
+    /// rightNavBarItemTapped()
+    /// ```
+    ///
+    /// - Warning: для ее работы необходимо вставить функцию в selector
+    ///
+    /// ```
+    /// UIBarButtonItem(title: nextTitle, style: .plain, target: self, action: #selector(rightNavBarItemTapped))
+    /// ```
+    /// - Returns: Void
+    @objc private func rightNavBarItemTapped() {
         
         // если телефон введен правильно
         if (phoneNumberTextField.isValidNumber)
@@ -114,12 +170,23 @@ class loginPhoneFormVC: UIViewController {
 
             // отправляем телефон на сервер.
             sk.send(data)
-
         }
         else{ print("Error in telephone")}
     }
     
-    func performActionAfterSuccessEvent(ansObj: createAnswer) -> Void
+    /// При положительном ответе сервера вызываем эту функцию
+    ///
+    /// ```
+    /// performActionAfterSuccessEvent()
+    /// ```
+    ///
+    /// - Warning: на вход гарантировано принимает createAnswer без ошибок и веря в не пустой ansObj.data
+    ///
+    /// ```
+    /// performActionAfterSuccessEvent(ansObj: decoded)
+    /// ```
+    /// - Returns: Void
+    private func performActionAfterSuccessEvent(ansObj: createAnswer) -> Void
     {
         if (ansObj.data!.user_exists) // пользователь по этому телефону зарегистрирован
         {
@@ -130,15 +197,25 @@ class loginPhoneFormVC: UIViewController {
             // сохраняем auth_id
             sk.auth_id = ansObj.data!.auth_id
             
-            // пробрасываем дальше по регистрации
             let vc = smsPhoneFormVC()
             vc.modalPresentationStyle = .overFullScreen
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     
-    // подкрашивание и активация кнопки 'next' в nav bar'e при корректном вводе телефона
-    @objc func phoneNumberCorrection() {
+    /// функция подкрашивания и активации кнопки 'next' в nav bar'e при корректном вводе телефона
+    ///
+    /// ```
+    /// phoneNumberCorrection()
+    /// ```
+    ///
+    /// - Warning: для ее работы необходимо вставить функцию в selector
+    ///
+    /// ```
+    /// button.addTarget(self, action: #selector(phoneNumberCorrection), for: .editingChanged)
+    /// ```
+    /// - Returns: Void
+    @objc private func phoneNumberCorrection() {
         if (phoneNumberTextField.isValidNumber) {
             navigationItem.rightBarButtonItem?.tintColor = .globalGreen
             navigationItem.rightBarButtonItem?.isEnabled = true
@@ -146,10 +223,17 @@ class loginPhoneFormVC: UIViewController {
         else {
             navigationItem.rightBarButtonItem?.isEnabled = false
         }
-        
     }
     
-    
+    /// недоработанная функция восстановления сессии
+    ///
+    /// ```
+    /// RestoreSession()
+    /// ```
+    ///
+    /// - Warning: недоработанная
+    ///
+    /// - Returns: Void
     public func RestoreSession()
     {
         // must check if there is any need to restore session
@@ -188,6 +272,18 @@ class loginPhoneFormVC: UIViewController {
 }
 
 extension loginPhoneFormVC: WebSocketDelegate{
+    
+    /// Функция, срабатывающая на event ответа с сервера на номер телефона
+    ///
+    /// - 0: OK
+    /// - 1: SERVICE_UNAVAILABLE
+    /// - 2: ACCESS_DENIED
+    /// - 3: FORMAT_INVALID
+    /// - 102: AUTH_EXISTS
+    /// - 107: USER_PHONE_BANNED
+    /// - default: UNEXPECTED_ERROR
+    /// - Warning: В теории может сработать на рандомный ответ. Необходима проверка на правильность полученного. Сейчас обычный do catch
+    ///
     func didReceive(event: WebSocketEvent, client: WebSocket) {
         print(event)
         switch event {
@@ -250,6 +346,7 @@ extension loginPhoneFormVC: WebSocketDelegate{
         }
     }
     
+    /// Функция, пишущая ошибки в консоль на запрос-ответы с сервером
     func handleError(_ error: Error?) {
         if let e = error as? WSError {
             print("websocket[Login_PHONE_FORM] encountered an error: \(e.message)")
@@ -259,8 +356,18 @@ extension loginPhoneFormVC: WebSocketDelegate{
             print("websocket[Login_PHONE_FORM] encountered an error")
         }
     }
-    
-    func handleCreateMethodError(_ error: Int, message: String)
+
+    /// Функция, выводящая ошибки на экран в виде Alert'a
+    ///
+    /// - 0: OK
+    /// - 1: SERVICE_UNAVAILABLE
+    /// - 2: ACCESS_DENIED
+    /// - 3: FORMAT_INVALID
+    /// - 102: AUTH_EXISTS
+    /// - 107: USER_PHONE_BANNED
+    /// - default: UNEXPECTED_ERROR
+    ///
+    private func handleCreateMethodError(_ error: Int, message: String)
     {
         
         let alert = UIAlertController(title: "Error: " + String(error), message: message, preferredStyle: .alert)
@@ -271,6 +378,18 @@ extension loginPhoneFormVC: WebSocketDelegate{
         })
     }
     
+    /// функция, убирающая alert по нажатию (тапу) извне
+    ///
+    /// ```
+    /// dismissOnTapOutside()
+    /// ```
+    ///
+    /// - Warning: для ее работы необходимо вставить функцию в selector
+    ///
+    /// ```
+    /// alert.view.superview?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.dismissOnTapOutside)))
+    /// ```
+    /// - Returns: Void
     @objc func dismissOnTapOutside(){
        self.dismiss(animated: true, completion: nil)
     }

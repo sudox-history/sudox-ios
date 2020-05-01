@@ -38,13 +38,22 @@ class smsPhoneFormVC: UIViewController {
         view.backgroundColor = .systemBackground
     }
     
-    func addImageIcon () {
+    /// добавляет контекстную мини-иконку
+    /// ```
+    /// addImageIcon()
+    /// ```
+    /// - Returns: Void
+    private func addImageIcon () {
         self.view.addSubview(imageIcon)
-        //imageIcon.tintColor = .black
         imageIcon.easy.layout([Left(15).to(view.safeAreaLayoutGuide, .left),Right(16).to(descriptionLabel),Top(25).to(view.safeAreaLayoutGuide, .top),Height(24), Width(24)])
     }
     
-    func addDescriptionLabel () {
+    /// добавляет label с поясняющим описанием на экран
+    /// ```
+    /// addDescriptionLabel()
+    /// ```
+    /// - Returns: Void
+    private func addDescriptionLabel () {
         self.view.addSubview(descriptionLabel)
         descriptionLabel.text = smsPhoneFormDescription + " " + telephone
         descriptionLabel.easy.layout([Right(16),Top(15).to(view.safeAreaLayoutGuide, .top),Height(44)])
@@ -53,6 +62,12 @@ class smsPhoneFormVC: UIViewController {
         
     }
     
+    /// добавляет форму ввода смс кода
+    /// ```
+    /// addSmsCodeTextField()
+    /// ```
+    /// - Warning: используется класс SmsTextField
+    /// - Returns: Void
     func addSmsCodeTextField () {
         self.view.addSubview(CodeTextField)
         CodeTextField.configure()
@@ -74,7 +89,20 @@ class smsPhoneFormVC: UIViewController {
         }
     }
     
-    func performActionAfterSuccessEvent(data: checkCodeAnswer) -> Void {
+
+    /// При положительном ответе сервера вызываем эту функцию
+    ///
+    /// ```
+    /// performActionAfterSuccessEvent()
+    /// ```
+    ///
+    /// - Warning: на вход принимает checkCodeAnswer и не использует его
+    ///
+    /// ```
+    /// performActionAfterSuccessEvent(ansObj: decoded)
+    /// ```
+    /// - Returns: Void
+    private func performActionAfterSuccessEvent(data: checkCodeAnswer) -> Void {
         
             let vc = nicknamePickerVC()
             vc.modalPresentationStyle = .overFullScreen
@@ -82,21 +110,29 @@ class smsPhoneFormVC: UIViewController {
 
     }
     
-    @objc func rightNavBarItemTapped(){
+    @objc private func rightNavBarItemTapped(){
     }
     
-    @objc func dismissOnTapOutside(){
-       self.dismiss(animated: true, completion: nil)
-    }
 }
 
-
 extension smsPhoneFormVC: WebSocketDelegate{
+    
+    /// Функция, срабатывающая на event ответа с сервера на смс код подтверждения
+    ///
+    /// - 0: OK
+    /// - 1: SERVICE_UNAVAILABLE
+    /// - 2: ACCESS_DENIED
+    /// - 3: FORMAT_INVALID
+    /// - 101: AUTH_NOT_FOUND
+    /// - 103: AUTH_DROPPED
+    /// - 105: AUTH_CODE_INVALID
+    /// - default: UNEXPECTED_ERROR
+    /// - Warning: В теории может сработать на рандомный ответ. Необходима проверка на правильность полученного. Сейчас обычный do catch
+    ///
     func didReceive(event: WebSocketEvent, client: WebSocket) {
         print(event)
         switch event {
         case .connected(let headers):
-            
             print("websocket3 is connected: \(headers)")
         case .disconnected(let reason, let code):
             print("websocket3 is disconnected: \(reason) with code: \(code)")
@@ -128,7 +164,7 @@ extension smsPhoneFormVC: WebSocketDelegate{
                     handleCheckCodeMethodError(103, message: "AUTH_DROPPED")
                     break
                 case 105: // AUTH_CODE_INVALID
-                    handleCheckCodeMethodError(103, message: "AUTH_CODE_INVALID")
+                    handleCheckCodeMethodError(105, message: "AUTH_CODE_INVALID")
                     break
                 default: // UNEXPECTED ERROR
                     handleCheckCodeMethodError(-1, message: "UNEXPECTED_ERROR")
@@ -153,6 +189,7 @@ extension smsPhoneFormVC: WebSocketDelegate{
         }
     }
     
+    /// Функция, пишущая ошибки в консоль на запрос-ответы с сервером
     func handleError(_ error: Error?) {
         if let e = error as? WSError {
             print("websocket[SMS_PHONE_FORM] encountered an error: \(e.message)")
@@ -163,6 +200,17 @@ extension smsPhoneFormVC: WebSocketDelegate{
         }
     }
     
+    /// Функция, выводящая ошибки на экран в виде Alert'a
+    ///
+    /// - 0: OK
+    /// - 1: SERVICE_UNAVAILABLE
+    /// - 2: ACCESS_DENIED
+    /// - 3: FORMAT_INVALID
+    /// - 101: AUTH_NOT_FOUND
+    /// - 103: AUTH_DROPPED
+    /// - 105: AUTH_CODE_INVALID
+    /// - default: UNEXPECTED_ERROR
+    ///
     func handleCheckCodeMethodError(_ error: Int, message: String)
     {
         
@@ -172,6 +220,22 @@ extension smsPhoneFormVC: WebSocketDelegate{
             alert.view.superview?.isUserInteractionEnabled = true
             alert.view.superview?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.dismissOnTapOutside)))
         })
+    }
+    
+    /// функция, убирающая alert по нажатию (тапу) извне
+    ///
+    /// ```
+    /// dismissOnTapOutside()
+    /// ```
+    ///
+    /// - Warning: для ее работы необходимо вставить функцию в selector
+    ///
+    /// ```
+    /// alert.view.superview?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.dismissOnTapOutside)))
+    /// ```
+    /// - Returns: Void
+    @objc private func dismissOnTapOutside(){
+       self.dismiss(animated: true, completion: nil)
     }
 
 }
