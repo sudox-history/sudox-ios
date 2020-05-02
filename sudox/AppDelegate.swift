@@ -43,7 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
     private func detectDebagDevice() {
-        let DEBAGUUIDS = ["AE802D66-D16C-4DCD-B0FC-0A0657AA9F60"]//user1man iphone]
+        let DEBAGUUIDS = ["AE802D66-D16C-4DCD-B0FC-0A0657AA9F60", "5FDE2A8A-EB21-49A8-86B8-D56F72743021"]//user1man iphone]
         guard let uuid = UIDevice.current.identifierForVendor?.uuidString else {return}
         print (uuid)
         if DEBAGUUIDS.contains(uuid) {

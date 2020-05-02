@@ -24,7 +24,9 @@ class MessagesPageController: UIPageViewController, UIPageViewControllerDataSour
         return [MessagesViewController(),
                 TalksListViewController()]
     }()
+    
     var segmantControl = MaterialSegmentedControl(selectorStyle: .line, textColor: .label, selectorTextColor: .label, selectorColor: colors.currentColors.mainColor, bgColor: .clear)//UISegmentedControl()//
+    
     func addSegmentButtons(names: [String]) -> [UIButton]{
         var buttons: [UIButton]? = []
         for buttonName in names {
@@ -36,6 +38,9 @@ class MessagesPageController: UIPageViewController, UIPageViewControllerDataSour
         
         return buttons!
     }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -48,6 +53,8 @@ class MessagesPageController: UIPageViewController, UIPageViewControllerDataSour
                                animated: true,
                                completion: nil)
         }
+        
+        
         
         
         
@@ -79,18 +86,21 @@ class MessagesPageController: UIPageViewController, UIPageViewControllerDataSour
         self.navigationItem.titleView = segmantControl
         segmantControl.addTarget(self, action: #selector(changeScreen), for: .valueChanged)
         segmantControl.backgroundColor = navigationController?.navigationBar.backgroundColor
-        navigationController?.hidesBarsOnSwipe=true
         
-        
+        navigationController?.hidesBarsOnSwipe = true
     }
+    
+
+    
     @objc func changeScreen (sender:MaterialSegmentedControl) {
-        
+        print(1)
         self.setViewControllers([self.orderedViewControllers[sender.selectedSegmentIndex]], direction: .forward, animated: true, completion: nil)
         
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         segmantControl.selectedSegmentIndex = 0
+        
         guard let viewControllerIndex = orderedViewControllers.firstIndex(of: viewController) else {
             return nil
         }
