@@ -39,11 +39,8 @@ class MainTabBarController: UITabBarController {
         withConfiguration: UIImage.SymbolConfiguration(pointSize: 16, weight: .regular, scale: .large))?.withTintColor(.globalGreen)
         
         navigationController1 = PeopleNavController(rootViewController: PeopleViewController(transitionStyle: .scroll, navigationOrientation: .horizontal))
-        navigationController2 = messagesNavControler(rootViewController: MessagesViewController())
-        
-        
-        
-        ///
+        navigationController2 = messagesNavControler(rootViewController: MessagesPageController())
+
         /// строчка 43 ломает ломает все констреинты в swiftui view. временно заменил на строчку 44
         let firstViewController = navigationController1
         //let firstViewController = PeopleViewController(transitionStyle: .scroll, navigationOrientation: .horizontal)// контроллер1

@@ -19,6 +19,8 @@ class ChatListTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         avatarImageView.setRounded()
+        nameLabel.font = UIFont(name:"HelveticaNeue-Bold", size: 16.0)
+        lastMessageLabel.font = UIFont.systemFont(ofSize: 14)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

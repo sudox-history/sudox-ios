@@ -12,4 +12,7 @@ struct messagesListStruct {
     let id: String
     let lastMessage: String
     let timeOfLastMessage: Date
+    let isOnline: Bool
+    var numberOfUnread: Int
+    var isMuted: Bool
 }

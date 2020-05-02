@@ -18,14 +18,15 @@ class MessagesViewController : UIViewController {
         super.viewDidLoad()
         setupView()
         timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(updateTableView), userInfo: nil, repeats: true);
-        chatsListData.append(messagesListStruct(name: "Никита Казанцев", id: "USAxWDpxyWy2KQBqrs6gqqJ7mc2E84wz", lastMessage: "О, опять обогнали Android в прогрессе", timeOfLastMessage: Date()))
-        chatsListData.append(messagesListStruct(name: "Никита Казанцев", id: "buFKx4meCBN3LtGmACJs55vCFca8Guhc", lastMessage: "О, опять обогнали Android в прогрессе", timeOfLastMessage: Date()))
+        chatsListData.append(messagesListStruct(name: "Никита Казанцев", id: "USAxWDpxyWy2KQBqrs6gqqJ7mc2E84wz", lastMessage: "О, опять обогнали Android в прогрессе", timeOfLastMessage: Date(), isOnline: true, numberOfUnread: 2, isMuted: false))
+        chatsListData.append(messagesListStruct(name: "Никита Казанцев", id: "buFKx4meCBN3LtGmACJs55vCFca8Guhc", lastMessage: "О, опять обогнали Android в прогрессе", timeOfLastMessage: Date(), isOnline: false, numberOfUnread: 105, isMuted: true))
         tableView.reloadData()
     }
     
     private func setupView() {
         view.backgroundColor = UIColor.systemBackground
-        self.title = "Messages"
+        //self.title = "Messages"
+        //self.navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     private func addTableView() -> UITableView {
@@ -69,8 +70,11 @@ extension MessagesViewController : UITableViewDataSource {
         let dateString = chatsListData[indexPath.row].timeOfLastMessage.timeAgoSinceDate
         cell.timeOfLastMessageLabel.text = dateString()
         cell.nameLabel.text = chatsListData[indexPath.row].name
-        cell.lastMessageLabel.text = chatsListData[indexPath.row].lastMessage
         
+        cell.lastMessageLabel.text = chatsListData[indexPath.row].lastMessage
+        if chatsListData[indexPath.row].isMuted {
+            cell.lastMessageLabel.textColor = UIColor.systemGray
+        }
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

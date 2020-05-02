@@ -146,7 +146,6 @@ extension Date { // time ago for
             if interval <= 7 {
                 
             }
-            return interval == 1 ? "yesterday" : "\(interval)" + " " + "days ago"
         }
 
         // Hours
