@@ -399,10 +399,10 @@
 		2C7A54EB2450BB400086AB73 /* Messages */ = {
 			isa = PBXGroup;
 			children = (
-				2C7A54EC2450BB400086AB73 /* MessagesViewController.swift */,
 				2C6FA63A245DA26100DF9742 /* MessagesPageController.swift */,
 				2C6FA63C245DA29A00DF9742 /* TalksListViewController.swift */,
 				2C9CA4062455E715004ED8A7 /* messagesListStruct.swift */,
+				2C7A54EC2450BB400086AB73 /* MessagesViewController.swift */,
 				2C9CA4022455DEA9004ED8A7 /* ChatListTableViewCell.swift */,
 				2C9CA4032455DEA9004ED8A7 /* ChatListTableViewCell.xib */,
 				2C7A54ED2450BB400086AB73 /* messagesNavControler.swift */,
@@ -971,13 +971,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Z6TZXH8MS8;
+				DEVELOPMENT_TEAM = 2QFL4STWWK;
 				INFOPLIST_FILE = sudox/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sinapsis.sudox;
+				PRODUCT_BUNDLE_IDENTIFIER = com.userman.sudox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -990,13 +990,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Z6TZXH8MS8;
+				DEVELOPMENT_TEAM = 2QFL4STWWK;
 				INFOPLIST_FILE = sudox/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sinapsis.sudox;
+				PRODUCT_BUNDLE_IDENTIFIER = com.userman.sudox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -67,14 +67,21 @@ extension MessagesViewController : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChatListTableViewCell", for: indexPath) as! ChatListTableViewCell
-        let dateString = chatsListData[indexPath.row].timeOfLastMessage.timeAgoSinceDate
+        let currentChatinList = chatsListData[indexPath.row] // создаю переменную с отдельным чатом
+        let dateString = currentChatinList.timeOfLastMessage.timeAgoSinceDate // время с последнего сообщения
         cell.timeOfLastMessageLabel.text = dateString()
-        cell.nameLabel.text = chatsListData[indexPath.row].name
+        cell.nameLabel.text = currentChatinList.name
         
-        cell.lastMessageLabel.text = chatsListData[indexPath.row].lastMessage
-        if chatsListData[indexPath.row].isMuted {
+        cell.lastMessageLabel.text = currentChatinList.lastMessage
+        if currentChatinList.isMuted {
             cell.lastMessageLabel.textColor = UIColor.systemGray
+            cell.numberOfUnreadLabel.backgroundColor = UIColor.systemGray2
+            
+        } else {
+            cell.numberOfUnreadLabel.backgroundColor = getColor().mainColor
         }
+        cell.numberOfUnreadLabel.text = String(currentChatinList.numberOfUnread)
+        
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
