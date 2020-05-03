@@ -164,7 +164,7 @@ extension Date { // time ago for
         return "now"
     }
 }
-extension UIImageView {
+extension UIImageView { // закругление объекта
 
    func setRounded() {
     let radius = self.frame.width / 2

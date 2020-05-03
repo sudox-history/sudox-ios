@@ -20,6 +20,8 @@ class MessagesViewController : UIViewController {
         timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(updateTableView), userInfo: nil, repeats: true);
         chatsListData.append(messagesListStruct(name: "Никита Казанцев", id: "USAxWDpxyWy2KQBqrs6gqqJ7mc2E84wz", lastMessage: "О, опять обогнали Android в прогрессе", timeOfLastMessage: Date(), isOnline: true, numberOfUnread: 2, isMuted: false))
         chatsListData.append(messagesListStruct(name: "Никита Казанцев", id: "buFKx4meCBN3LtGmACJs55vCFca8Guhc", lastMessage: "О, опять обогнали Android в прогрессе", timeOfLastMessage: Date(), isOnline: false, numberOfUnread: 105, isMuted: true))
+        chatsListData.append(messagesListStruct(name: "Никита Казанцев", id: "USAxWDpxyWy2KQBqrs6gqqJ7mc2E84wz", lastMessage: "О, опять обогнали Android в прогрессе", timeOfLastMessage: Date(), isOnline: true, numberOfUnread: 2, isMuted: false))
+        chatsListData.append(messagesListStruct(name: "Никита Казанцев", id: "buFKx4meCBN3LtGmACJs55vCFca8Guhc", lastMessage: "О, опять обогнали Android в прогрессе", timeOfLastMessage: Date(), isOnline: false, numberOfUnread: 105, isMuted: true))
         tableView.reloadData()
     }
     
@@ -76,11 +78,18 @@ extension MessagesViewController : UITableViewDataSource {
         if currentChatinList.isMuted {
             cell.lastMessageLabel.textColor = UIColor.systemGray
             cell.numberOfUnreadLabel.backgroundColor = UIColor.systemGray2
+            cell.sizeOfLastMessageLabel.constant = 19
             
         } else {
             cell.numberOfUnreadLabel.backgroundColor = getColor().mainColor
         }
-        cell.numberOfUnreadLabel.text = String(currentChatinList.numberOfUnread)
+        if currentChatinList.numberOfUnread == 0 {
+            cell.numberOfUnreadLabel.isHidden = true
+            cell.sizeOfLastMessageLabel.constant = 19
+        } else {
+            cell.numberOfUnreadLabel.text = String(currentChatinList.numberOfUnread)
+        }
+        
         
         return cell
     }

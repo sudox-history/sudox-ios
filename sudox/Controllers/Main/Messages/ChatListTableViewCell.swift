@@ -13,15 +13,17 @@ class ChatListTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var timeOfLastMessageLabel: UILabel!
     
+    @IBOutlet weak var sizeOfLastMessageLabel: NSLayoutConstraint!
     @IBOutlet weak var numberOfUnreadLabel: PaddingLabel!
     @IBOutlet weak var lastMessageLabel: UILabel!
     @IBOutlet weak var avatarImageView: UIImageView!
     
     override func awakeFromNib() {
-        super.awakeFromNib()
+        super.awakeFromNib() //здесь установки которые всегда одинаковы, вне зависисмости от состояния ячейки
         avatarImageView.setRounded()
-        nameLabel.font = UIFont(name:"HelveticaNeue-Bold", size: 16.0)
+        nameLabel.font = UIFont.systemFont(ofSize: 14)
         lastMessageLabel.font = UIFont.systemFont(ofSize: 14)
+        //lastMessageLabel.sizeToFit()
         timeOfLastMessageLabel.textColor = UIColor.systemGray
         numberOfUnreadLabel.textColor = UIColor.white
         numberOfUnreadLabel.layer.masksToBounds = true;
