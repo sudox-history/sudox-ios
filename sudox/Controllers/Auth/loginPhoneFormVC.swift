@@ -224,51 +224,7 @@ class loginPhoneFormVC: UIViewController {
             navigationItem.rightBarButtonItem?.isEnabled = false
         }
     }
-    
-    /// недоработанная функция восстановления сессии
-    ///
-    /// ```
-    /// RestoreSession()
-    /// ```
-    ///
-    /// - Warning: недоработанная
-    ///
-    /// - Returns: Void
-    public func RestoreSession()
-    {
-        // must check if there is any need to restore session
-        //getting 'retrievedToken' - registration token
-        if let retrievedToken: String = KeychainWrapper.standard.string(forKey: "registrationToken")
-        {
-            print("registrationToken найдено в базе")
-            if let retrievedTokenDate: NSDate = KeychainWrapper.standard.object(forKey: "registrationTokenExpiryDate") as? NSDate
-            {
-                print("registrationTokenExpiryDate найдено в базе")
-                let now =  NSDate.now as NSDate;
-                
-                if (now.isExpired(dateToCompare: (retrievedTokenDate), expirationTime: TimeInterval(5.0 * 60.0)))
-                {
-                    print("ключ expired. невозможно восстановить сессию")
-                    // expired, should have deleted key from keychain
-                    
-                }
-                else
-                {
-                    // not expired, can reactivate session
-                    /*
-                     if (sk.restoreRegSession(retrievedToken))
-                     {
-                     print("READY TO LOAD VIEW AFTER RESTORATION")
-                     }
-                     else
-                     {
-                     print("restoration failed")
-                     }
-                     */
-                }
-            }
-        }
-    }
+
 }
 
 extension loginPhoneFormVC: WebSocketDelegate{
@@ -290,7 +246,6 @@ extension loginPhoneFormVC: WebSocketDelegate{
         case .connected(let headers):
             sk.isConnected = true
             print("websocket is connected: \(headers)")
-            //RestoreSession()
             
         case .disconnected(let reason, let code):
             sk.isConnected = false
@@ -307,22 +262,22 @@ extension loginPhoneFormVC: WebSocketDelegate{
                     performActionAfterSuccessEvent(ansObj: decoded)
                     break
                 case 1: // SERVICE_UNAVAILABLE
-                    handleCreateMethodError(1, message: "SERVICE_UNAVAILABLE")
+                    showAlertMessage(errorCode: 1)
                     break
                 case 2: // ACCESS_DENIED
-                    handleCreateMethodError(2, message: "ACCESS_DENIED")
+                    showAlertMessage(errorCode: 2)
                     break
                 case 3: // FORMAT_INVALID
-                    handleCreateMethodError(3, message: "FORMAT_INVALID")
+                    showAlertMessage(errorCode: 3)
                     break
                 case 102: // AUTH_EXISTS
-                    handleCreateMethodError(102, message: "AUTH_EXISTS")
+                    showAlertMessage(errorCode: 102)
                     break
                 case 107: // USER_PHONE_BANNED
-                    handleCreateMethodError(107, message: "USER_PHONE_BANNED")
+                    showAlertMessage(errorCode: 107)
                     break
                 default: // UNEXPECTED ERROR
-                    handleCreateMethodError(-1, message: "UNEXPECTED_ERROR")
+                    showAlertMessage(errorCode: decoded.method_result)
                     break
                 }
             }
@@ -355,42 +310,5 @@ extension loginPhoneFormVC: WebSocketDelegate{
         } else {
             print("websocket[Login_PHONE_FORM] encountered an error")
         }
-    }
-
-    /// Функция, выводящая ошибки на экран в виде Alert'a
-    ///
-    /// - 0: OK
-    /// - 1: SERVICE_UNAVAILABLE
-    /// - 2: ACCESS_DENIED
-    /// - 3: FORMAT_INVALID
-    /// - 102: AUTH_EXISTS
-    /// - 107: USER_PHONE_BANNED
-    /// - default: UNEXPECTED_ERROR
-    ///
-    private func handleCreateMethodError(_ error: Int, message: String)
-    {
-        
-        let alert = UIAlertController(title: "Error: " + String(error), message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        present(alert, animated: true, completion:{
-           alert.view.superview?.isUserInteractionEnabled = true
-           alert.view.superview?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.dismissOnTapOutside)))
-        })
-    }
-    
-    /// функция, убирающая alert по нажатию (тапу) извне
-    ///
-    /// ```
-    /// dismissOnTapOutside()
-    /// ```
-    ///
-    /// - Warning: для ее работы необходимо вставить функцию в selector
-    ///
-    /// ```
-    /// alert.view.superview?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.dismissOnTapOutside)))
-    /// ```
-    /// - Returns: Void
-    @objc func dismissOnTapOutside(){
-       self.dismiss(animated: true, completion: nil)
     }
 }

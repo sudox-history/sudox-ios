@@ -24,6 +24,44 @@ extension UIViewController {
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
+    
+    func showAlertMessage(errorCode: Int) {
+        
+        let err: Error = AppError.authorization(type: AppError.Enums.AuthorizationError(rawValue: errorCode)!)
+        
+        let alert = UIAlertController(title: String(errorCode), message: err.localizedDescription, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: {
+           alert.view.superview?.isUserInteractionEnabled = true
+           alert.view.superview?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.dismissErrorOnTapOutside)))
+        })
+    }
+    
+    func showAlertMessage(titleStr:String, messageStr:String) {
+        let alert = UIAlertController(title: titleStr, message: messageStr, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: {
+           alert.view.superview?.isUserInteractionEnabled = true
+           alert.view.superview?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.dismissErrorOnTapOutside)))
+        })
+    }
+    
+    /// функция, убирающая alert по нажатию (тапу) извне
+    ///
+    /// ```
+    /// dismissOnTapOutside()
+    /// ```
+    ///
+    /// - Warning: для ее работы необходимо вставить функцию в selector
+    ///
+    /// ```
+    /// alert.view.superview?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.dismissOnTapOutside)))
+    /// ```
+    /// - Returns: Void
+    @objc func dismissErrorOnTapOutside(){
+       self.dismiss(animated: true, completion: nil)
+    }
+    
 }
 struct myColors {
     static let NativeBlue = UIColor(red:0/255, green:122/255, blue:255/255, alpha:1)

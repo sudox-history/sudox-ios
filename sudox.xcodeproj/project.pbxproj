@@ -73,6 +73,7 @@
 		8024508E2457753C00DDCCA4 /* verifyRg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8024508D2457753C00DDCCA4 /* verifyRg.swift */; };
 		80245090245775FC00DDCCA4 /* respondVerifyRg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8024508F245775FC00DDCCA4 /* respondVerifyRg.swift */; };
 		802450922457768B00DDCCA4 /* signInRg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802450912457768B00DDCCA4 /* signInRg.swift */; };
+		80696881245F366500AE8DA4 /* errorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80696880245F366500AE8DA4 /* errorModel.swift */; };
 		992F4A81A707776FC2B5E4AB /* libPods-sudoxTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC465278A1D9AD54711FE19 /* libPods-sudoxTests.a */; };
 /* End PBXBuildFile section */
 
@@ -169,6 +170,7 @@
 		8024508D2457753C00DDCCA4 /* verifyRg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = verifyRg.swift; sourceTree = "<group>"; };
 		8024508F245775FC00DDCCA4 /* respondVerifyRg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = respondVerifyRg.swift; sourceTree = "<group>"; };
 		802450912457768B00DDCCA4 /* signInRg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signInRg.swift; sourceTree = "<group>"; };
+		80696880245F366500AE8DA4 /* errorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = errorModel.swift; sourceTree = "<group>"; };
 		81EE7308DA2B047C80ABC9D4 /* Pods-sudoxTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sudoxTests.release.xcconfig"; path = "Target Support Files/Pods-sudoxTests/Pods-sudoxTests.release.xcconfig"; sourceTree = "<group>"; };
 		B257C54CB21C96F183C898E3 /* Pods-sudoxTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sudoxTests.debug.xcconfig"; path = "Target Support Files/Pods-sudoxTests/Pods-sudoxTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B54C6AF9210B34D8D37036CD /* Pods-sudoxUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sudoxUITests.release.xcconfig"; path = "Target Support Files/Pods-sudoxUITests/Pods-sudoxUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 		2C7A54A62450B98C0086AB73 /* models */ = {
 			isa = PBXGroup;
 			children = (
+				8069687D245F284900AE8DA4 /* Messages */,
 				2C7A54A72450B98C0086AB73 /* person.swift */,
 				2C7A54A82450B98C0086AB73 /* Extensions.swift */,
 				2C7A54A92450B98C0086AB73 /* Feed */,
@@ -276,6 +279,7 @@
 				2C7A54B22450B98C0086AB73 /* DeepLink */,
 				2C7A54B72450B98C0086AB73 /* Socket.swift */,
 				801F102624576D4400C966EE /* RegistrationMethods */,
+				80696880245F366500AE8DA4 /* errorModel.swift */,
 			);
 			name = models;
 			path = models/models;
@@ -401,7 +405,6 @@
 			children = (
 				2C6FA63A245DA26100DF9742 /* MessagesPageController.swift */,
 				2C6FA63C245DA29A00DF9742 /* TalksListViewController.swift */,
-				2C9CA4062455E715004ED8A7 /* messagesListStruct.swift */,
 				2C7A54EC2450BB400086AB73 /* MessagesViewController.swift */,
 				2C9CA4022455DEA9004ED8A7 /* ChatListTableViewCell.swift */,
 				2C9CA4032455DEA9004ED8A7 /* ChatListTableViewCell.xib */,
@@ -456,6 +459,14 @@
 				802450912457768B00DDCCA4 /* signInRg.swift */,
 			);
 			path = RegistrationMethods;
+			sourceTree = "<group>";
+		};
+		8069687D245F284900AE8DA4 /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				2C9CA4062455E715004ED8A7 /* messagesListStruct.swift */,
+			);
+			path = Messages;
 			sourceTree = "<group>";
 		};
 		E5A119E494AFD877DB6CB524 /* Pods */ = {
@@ -778,6 +789,7 @@
 				8024508C245772B400DDCCA4 /* signUpRg.swift in Sources */,
 				2C7A54BD2450B98C0086AB73 /* Post.swift in Sources */,
 				2C7A54FF2450BB400086AB73 /* loginNavController.swift in Sources */,
+				80696881245F366500AE8DA4 /* errorModel.swift in Sources */,
 				2C7A54DA2450BA630086AB73 /* FriendListItemView.swift in Sources */,
 				8024508E2457753C00DDCCA4 /* verifyRg.swift in Sources */,
 				2C7A54C62450B98C0086AB73 /* Socket.swift in Sources */,
@@ -971,13 +983,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2QFL4STWWK;
+				DEVELOPMENT_TEAM = Z6TZXH8MS8;
 				INFOPLIST_FILE = sudox/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.userman.sudox;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sinapsis.sudox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -990,13 +1002,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2QFL4STWWK;
+				DEVELOPMENT_TEAM = Z6TZXH8MS8;
 				INFOPLIST_FILE = sudox/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.userman.sudox;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sinapsis.sudox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

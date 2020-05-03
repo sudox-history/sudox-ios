@@ -155,7 +155,11 @@ class nicknamePickerVC: UIViewController {
          UIApplication.shared.windows.first?.rootViewController = SplashViewController()
          self.navigationController?.popToRootViewController(animated: true)
          */
+
+        // массив рандомных байтов длины 32. Требуется сохранить его в локальную базу данных.
         let secretKey = Sodium().secretBox.key() //.crypto_aead_xchacha20poly1305_ietf_KEYBYTES
+        
+        //хэш user_key по BLAKE2b
         let secretKeyHash = Sodium().genericHash.hash(message: secretKey)!
         let data_key = Data(secretKeyHash)
 
@@ -232,25 +236,25 @@ extension nicknamePickerVC: WebSocketDelegate{
                     performActionAfterSuccessEvent(data: decoded)
                     break
                 case 1: // SERVICE_UNAVAILABLE
-                    handleSignUpMethodError(1, message: "SERVICE_UNAVAILABLE")
+                    showAlertMessage(errorCode: 1)
                     break
                 case 2: // ACCESS_DENIED
-                    handleSignUpMethodError(2, message: "ACCESS_DENIED")
+                    showAlertMessage(errorCode: 2)
                     break
                 case 3: // FORMAT_INVALID
-                    handleSignUpMethodError(3, message: "FORMAT_INVALID")
+                    showAlertMessage(errorCode: 3)
                     break
                 case 101: // AUTH_NOT_FOUND
-                    handleSignUpMethodError(101, message: "AUTH_NOT_FOUND")
+                    showAlertMessage(errorCode: 101)
                     break
                 case 104: // AUTH_TYPE_INVALID
-                    handleSignUpMethodError(104, message: "AUTH_TYPE_INVALID")
+                    showAlertMessage(errorCode: 104)
                     break
                 case 105: // AUTH_CODE_INVALID
-                    handleSignUpMethodError(105, message: "AUTH_CODE_INVALID")
+                    showAlertMessage(errorCode: 105)
                     break
                 default: // UNEXPECTED ERROR
-                    handleSignUpMethodError(-1, message: "UNEXPECTED_ERROR")
+                    showAlertMessage(errorCode: decoded.method_result)
                     break
                 }
             }
@@ -266,9 +270,7 @@ extension nicknamePickerVC: WebSocketDelegate{
         case .cancelled:
             break
         case .error(let error):
-            
             handleError(error)
-            
         }
     }
     
@@ -283,41 +285,5 @@ extension nicknamePickerVC: WebSocketDelegate{
         }
     }
     
-    /// Функция, выводящая ошибки на экран в виде Alert'a
-    ///
-    /// - 0: OK
-    /// - 1: SERVICE_UNAVAILABLE
-    /// - 2: ACCESS_DENIED
-    /// - 3: FORMAT_INVALID
-    /// - 101: AUTH_NOT_FOUND
-    /// - 104: AUTH_TYPE_INVALID
-    /// - 105: AUTH_CODE_INVALID
-    /// - default: UNEXPECTED_ERROR
-    ///
-    func handleSignUpMethodError(_ error: Int, message: String)
-    {
-        
-        let alert = UIAlertController(title: "Error: " + String(error), message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        present(alert, animated: true, completion:{
-            alert.view.superview?.isUserInteractionEnabled = true
-            alert.view.superview?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.dismissOnTapOutside)))
-        })
-    }
-    
-    /// функция, убирающая alert по нажатию (тапу) извне
-    ///
-    /// ```
-    /// dismissOnTapOutside()
-    /// ```
-    ///
-    /// - Warning: для ее работы необходимо вставить функцию в selector
-    ///
-    /// ```
-    /// alert.view.superview?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.dismissOnTapOutside)))
-    /// ```
-    /// - Returns: Void
-    @objc func dismissOnTapOutside(){
-        self.dismiss(animated: true, completion: nil)
-    }
+
 }
