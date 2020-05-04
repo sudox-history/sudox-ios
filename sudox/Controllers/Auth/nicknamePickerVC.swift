@@ -92,8 +92,10 @@ class nicknamePickerVC: UIViewController {
         
         self.nicknameTextField.textContentType = .nickname
         self.nicknameTextField.autocorrectionType = .yes
+        self.nicknameTextField.placeholder = "Nickname"
         // закругление родительского view у поля ввода
         // добавление серых рамок
+        
         self.nicknameTextField.layer.cornerRadius = 5
         self.nicknameTextField.clipsToBounds = true
         self.nicknameTextField.layer.borderColor = UIColor.grayBorder.cgColor
@@ -119,6 +121,7 @@ class nicknamePickerVC: UIViewController {
         
         self.nameTextField.textContentType = .nickname
         self.nameTextField.autocorrectionType = .yes
+        self.nameTextField.placeholder = "Name & surname"
         // закругление родительского view у поля ввода
         // добавление серых рамок
         self.nameTextField.layer.cornerRadius = 5
@@ -147,20 +150,16 @@ class nicknamePickerVC: UIViewController {
     /// ```
     /// - Returns: Void
     @objc func rightNavBarItemTapped(){
-        //self.performSegue(withIdentifier: "loginToSmsVerification", sender: self)
         
-        /*
-         UserDefaults.standard.set(true, forKey: "LOGGED_IN")
-         
-         UIApplication.shared.windows.first?.rootViewController = SplashViewController()
-         self.navigationController?.popToRootViewController(animated: true)
-         */
-
-        // массив рандомных байтов длины 32. Требуется сохранить его в локальную базу данных.
-        let secretKey = Sodium().secretBox.key() //.crypto_aead_xchacha20poly1305_ietf_KEYBYTES
+        if ((nicknameTextField.text ?? "").matches("^[0-9A-z.:_\\-()]{1,30}$") && (nameTextField.text ?? "").matches("^([A-zА-я]{1,20}\\s?){2}$")) {
+            // массив рандомных байтов длины 32. Требуется сохранить его в локальную базу данных.
+        let userKey = Sodium().secretBox.key() //.crypto_aead_xchacha20poly1305_ietf_KEYBYTES
+        
+        // сохраняем hex представление ключа в бд
+        KeychainWrapper.standard.set(Sodium().utils.bin2hex(userKey)!, forKey: "userKey")
         
         //хэш user_key по BLAKE2b
-        let secretKeyHash = Sodium().genericHash.hash(message: secretKey)!
+        let secretKeyHash = Sodium().genericHash.hash(message: userKey)!
         let data_key = Data(secretKeyHash)
 
         let secretkeyutf = data_key.hexEncodedString()
@@ -171,6 +170,11 @@ class nicknamePickerVC: UIViewController {
         let data = try! MessagePackEncoder().encode(dict)
         
         sk.send(data)
+        }
+        else
+        {
+            showAlertMessage(errorCode: 3)
+        }
     }
     
     

@@ -13,6 +13,17 @@ extension String {
     var localized: String {
         return NSLocalizedString(self, comment: "")
     }
+    
+    func matches(_ regex: String) -> Bool {
+        return self.range(of: regex, options: .regularExpression, range: nil, locale: nil) != nil
+    }
+    
+    func convertToDictionary() -> [String: Any]? {
+        if let data = data(using: .utf8) {
+            return try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+        }
+        return nil
+    }
 }
 extension UIViewController {
     func hideKeyboardWhenTappedAround() {
@@ -145,14 +156,6 @@ extension Array where Element: Equatable {
 
 }
 
-extension String {
-    func convertToDictionary() -> [String: Any]? {
-        if let data = data(using: .utf8) {
-            return try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
-        }
-        return nil
-    }
-}
 extension Date { // time ago for
 
     func timeAgoSinceDate() -> String {
