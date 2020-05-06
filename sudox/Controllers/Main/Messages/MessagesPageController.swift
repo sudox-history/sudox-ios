@@ -27,20 +27,7 @@ class MessagesPageController: UIPageViewController, UIPageViewControllerDataSour
     
     var segmantControl = MaterialSegmentedControl(selectorStyle: .line, textColor: .label, selectorTextColor: .label, selectorColor: colors.currentColors.mainColor, bgColor: .clear)//UISegmentedControl()//
     
-    func addSegmentButtons(names: [String]) -> [UIButton]{
-        var buttons: [UIButton]? = []
-        for buttonName in names {
-            var button = UIButton()
-            button.setTitle(buttonName)
-            
-            buttons?.append(button)
-        }
-        
-        return buttons!
-    }
-    
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -53,34 +40,29 @@ class MessagesPageController: UIPageViewController, UIPageViewControllerDataSour
                                animated: true,
                                completion: nil)
         }
-        
-        
-        
-        
-        
-        /*
-         let viewWidth = self.view.frame.size.width
-         let headerView = UIView(frame: CGRect(x: 0, y: 0, width: viewWidth, height: 75))
-         let descLabel = UIButton(frame: CGRect(x: 0, y: 0, width: viewWidth, height: 40))
-         
-         headerView.backgroundColor = UIColor(named: "WhiteBlack")
-         headerView.addSubview(descLabel)
-         
-         self.view.addSubview(headerView)
-         */
+
         addSegmentControll()
         
+    }
+    
+    func addSegmentButtons(names: [String]) -> [UIButton]{
+        var buttons: [UIButton]? = []
+        for buttonName in names {
+            let button = UIButton()
+            button.setTitle(buttonName)
+            
+            buttons?.append(button)
+        }
+        
+        return buttons!
     }
     
     
     func addSegmentControll () {
         
         segmantControl.tintColor = .globalGreen
-        //segmantControl.selectedSegmentTintColor = .globalGreen
-        //segmantControl.insertSegment(withTitle: "Yours", at: 0, animated: true) //будет после MVP
         segmantControl.segments = addSegmentButtons(names: ["Chats", "Talks"])
-//        segmantControl.insertSegment(withTitle: "Activity", at: 0, animated: true)
-//        segmantControl.insertSegment(withTitle: "People", at: 1, animated: true)
+
         segmantControl.backgroundColor = UIColor.systemBackground
         segmantControl.selectedSegmentIndex = 0
         self.navigationItem.titleView = segmantControl
@@ -97,6 +79,7 @@ class MessagesPageController: UIPageViewController, UIPageViewControllerDataSour
         self.setViewControllers([self.orderedViewControllers[sender.selectedSegmentIndex]], direction: .forward, animated: true, completion: nil)
         
     }
+    
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         segmantControl.selectedSegmentIndex = 0
@@ -137,10 +120,5 @@ class MessagesPageController: UIPageViewController, UIPageViewControllerDataSour
         
         return orderedViewControllers[nextIndex]
     }
-    
-    
-    
-    
-    
     
 }

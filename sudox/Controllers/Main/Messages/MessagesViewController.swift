@@ -27,8 +27,6 @@ class MessagesViewController : UIViewController {
     
     private func setupView() {
         view.backgroundColor = UIColor.systemBackground
-        //self.title = "Messages"
-        //self.navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     private func addTableView() -> UITableView {

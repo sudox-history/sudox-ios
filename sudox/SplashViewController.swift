@@ -40,12 +40,10 @@ class SplashViewController: UIViewController  {
 //    }
     
     override func viewDidAppear(_ animated: Bool) {
-        
-        //view.subviews.forEach { $0.removeFromSuperview() }
+
         SplashAnimation()
-        
-        
-        let newViewController = chooseVC()//chooseVC()
+
+        let newViewController = chooseVC()
         
         newViewController.modalPresentationStyle = .overFullScreen
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {

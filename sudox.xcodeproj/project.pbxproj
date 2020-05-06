@@ -40,7 +40,6 @@
 		2C7A54DB2450BA630086AB73 /* RequestsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A54CE2450BA620086AB73 /* RequestsListView.swift */; };
 		2C7A54DC2450BA630086AB73 /* StoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A54D02450BA620086AB73 /* StoryItem.swift */; };
 		2C7A54DD2450BA630086AB73 /* story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A54D12450BA620086AB73 /* story.swift */; };
-		2C7A54DE2450BA630086AB73 /* dialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A54D32450BA630086AB73 /* dialogView.swift */; };
 		2C7A54DF2450BA630086AB73 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A54D52450BA630086AB73 /* PostView.swift */; };
 		2C7A54E02450BA630086AB73 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A54D62450BA630086AB73 /* Feed.swift */; };
 		2C7A54FC2450BB400086AB73 /* smsPhoneFormVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A54E62450BB400086AB73 /* smsPhoneFormVC.swift */; };
@@ -74,6 +73,9 @@
 		80245090245775FC00DDCCA4 /* respondVerifyRg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8024508F245775FC00DDCCA4 /* respondVerifyRg.swift */; };
 		802450922457768B00DDCCA4 /* signInRg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802450912457768B00DDCCA4 /* signInRg.swift */; };
 		80696881245F366500AE8DA4 /* errorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80696880245F366500AE8DA4 /* errorModel.swift */; };
+		80EFAC4824631F9D007A16FA /* BlogFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EFAC4724631F9D007A16FA /* BlogFeedController.swift */; };
+		80EFAC4A24631FAF007A16FA /* BlogBotsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EFAC4924631FAF007A16FA /* BlogBotsController.swift */; };
+		80EFAC4C246323A8007A16FA /* blogNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EFAC4B246323A8007A16FA /* blogNavController.swift */; };
 		992F4A81A707776FC2B5E4AB /* libPods-sudoxTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DC465278A1D9AD54711FE19 /* libPods-sudoxTests.a */; };
 /* End PBXBuildFile section */
 
@@ -134,7 +136,6 @@
 		2C7A54CE2450BA620086AB73 /* RequestsListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestsListView.swift; sourceTree = "<group>"; };
 		2C7A54D02450BA620086AB73 /* StoryItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryItem.swift; sourceTree = "<group>"; };
 		2C7A54D12450BA620086AB73 /* story.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = story.swift; sourceTree = "<group>"; };
-		2C7A54D32450BA630086AB73 /* dialogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dialogView.swift; sourceTree = "<group>"; };
 		2C7A54D52450BA630086AB73 /* PostView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 		2C7A54D62450BA630086AB73 /* Feed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		2C7A54E62450BB400086AB73 /* smsPhoneFormVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = smsPhoneFormVC.swift; sourceTree = "<group>"; };
@@ -171,6 +172,9 @@
 		8024508F245775FC00DDCCA4 /* respondVerifyRg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = respondVerifyRg.swift; sourceTree = "<group>"; };
 		802450912457768B00DDCCA4 /* signInRg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signInRg.swift; sourceTree = "<group>"; };
 		80696880245F366500AE8DA4 /* errorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = errorModel.swift; sourceTree = "<group>"; };
+		80EFAC4724631F9D007A16FA /* BlogFeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogFeedController.swift; sourceTree = "<group>"; };
+		80EFAC4924631FAF007A16FA /* BlogBotsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogBotsController.swift; sourceTree = "<group>"; };
+		80EFAC4B246323A8007A16FA /* blogNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = blogNavController.swift; sourceTree = "<group>"; };
 		81EE7308DA2B047C80ABC9D4 /* Pods-sudoxTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sudoxTests.release.xcconfig"; path = "Target Support Files/Pods-sudoxTests/Pods-sudoxTests.release.xcconfig"; sourceTree = "<group>"; };
 		B257C54CB21C96F183C898E3 /* Pods-sudoxTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sudoxTests.debug.xcconfig"; path = "Target Support Files/Pods-sudoxTests/Pods-sudoxTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B54C6AF9210B34D8D37036CD /* Pods-sudoxUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sudoxUITests.release.xcconfig"; path = "Target Support Files/Pods-sudoxUITests/Pods-sudoxUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -269,16 +273,16 @@
 		2C7A54A62450B98C0086AB73 /* models */ = {
 			isa = PBXGroup;
 			children = (
+				801F102624576D4400C966EE /* RegistrationMethods */,
+				2C7A54B22450B98C0086AB73 /* DeepLink */,
+				2C7A54A92450B98C0086AB73 /* Feed */,
 				8069687D245F284900AE8DA4 /* Messages */,
 				2C7A54A72450B98C0086AB73 /* person.swift */,
 				2C7A54A82450B98C0086AB73 /* Extensions.swift */,
-				2C7A54A92450B98C0086AB73 /* Feed */,
 				2C7A54AF2450B98C0086AB73 /* FriendFetcher.swift */,
 				2C7A54B02450B98C0086AB73 /* colors.swift */,
 				2C7A54B12450B98C0086AB73 /* titles.swift */,
-				2C7A54B22450B98C0086AB73 /* DeepLink */,
 				2C7A54B72450B98C0086AB73 /* Socket.swift */,
-				801F102624576D4400C966EE /* RegistrationMethods */,
 				80696880245F366500AE8DA4 /* errorModel.swift */,
 			);
 			name = models;
@@ -311,6 +315,7 @@
 		2C7A54C72450BA1C0086AB73 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				80EFAC4624631EB3007A16FA /* Blog */,
 				2C7A54D42450BA630086AB73 /* Feed */,
 				2C7A54CA2450BA620086AB73 /* Friends */,
 				2C7A54C82450BA620086AB73 /* Login */,
@@ -351,7 +356,7 @@
 		2C7A54D22450BA630086AB73 /* Messages */ = {
 			isa = PBXGroup;
 			children = (
-				2C7A54D32450BA630086AB73 /* dialogView.swift */,
+				2C9CA4032455DEA9004ED8A7 /* ChatListTableViewCell.xib */,
 			);
 			path = Messages;
 			sourceTree = "<group>";
@@ -407,7 +412,6 @@
 				2C6FA63C245DA29A00DF9742 /* TalksListViewController.swift */,
 				2C7A54EC2450BB400086AB73 /* MessagesViewController.swift */,
 				2C9CA4022455DEA9004ED8A7 /* ChatListTableViewCell.swift */,
-				2C9CA4032455DEA9004ED8A7 /* ChatListTableViewCell.xib */,
 				2C7A54ED2450BB400086AB73 /* messagesNavControler.swift */,
 			);
 			path = Messages;
@@ -425,6 +429,9 @@
 			isa = PBXGroup;
 			children = (
 				2C7A54F12450BB400086AB73 /* BlogViewController.swift */,
+				80EFAC4724631F9D007A16FA /* BlogFeedController.swift */,
+				80EFAC4924631FAF007A16FA /* BlogBotsController.swift */,
+				80EFAC4B246323A8007A16FA /* blogNavController.swift */,
 			);
 			path = Blog;
 			sourceTree = "<group>";
@@ -467,6 +474,13 @@
 				2C9CA4062455E715004ED8A7 /* messagesListStruct.swift */,
 			);
 			path = Messages;
+			sourceTree = "<group>";
+		};
+		80EFAC4624631EB3007A16FA /* Blog */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Blog;
 			sourceTree = "<group>";
 		};
 		E5A119E494AFD877DB6CB524 /* Pods */ = {
@@ -757,6 +771,7 @@
 				2C7A54C12450B98C0086AB73 /* titles.swift in Sources */,
 				2C7A550F2450BBDD0086AB73 /* SplashViewController.swift in Sources */,
 				2C9CA4072455E715004ED8A7 /* messagesListStruct.swift in Sources */,
+				80EFAC4C246323A8007A16FA /* blogNavController.swift in Sources */,
 				2C7A54C22450B98C0086AB73 /* deeplinkNavigator.swift in Sources */,
 				2C7A550B2450BB400086AB73 /* testVC1.swift in Sources */,
 				2C7A54DB2450BA630086AB73 /* RequestsListView.swift in Sources */,
@@ -780,9 +795,9 @@
 				2C7A54BE2450B98C0086AB73 /* stories.swift in Sources */,
 				2C7A54DD2450BA630086AB73 /* story.swift in Sources */,
 				2C7A54B82450B98C0086AB73 /* person.swift in Sources */,
-				2C7A54DE2450BA630086AB73 /* dialogView.swift in Sources */,
 				2C7A54FE2450BB400086AB73 /* loginPhoneFormVC.swift in Sources */,
 				2C7A54FC2450BB400086AB73 /* smsPhoneFormVC.swift in Sources */,
+				80EFAC4A24631FAF007A16FA /* BlogBotsController.swift in Sources */,
 				2C7A55112450BD230086AB73 /* DebagVC.swift in Sources */,
 				2C7A55052450BB400086AB73 /* peopleNavController.swift in Sources */,
 				2C7A54E02450BA630086AB73 /* Feed.swift in Sources */,
@@ -803,6 +818,7 @@
 				2C7A55062450BB400086AB73 /* CustomSegmentedContrl.swift in Sources */,
 				2C7A54D92450BA630086AB73 /* FriendsListView.swift in Sources */,
 				2C7A54772450B6780086AB73 /* SceneDelegate.swift in Sources */,
+				80EFAC4824631F9D007A16FA /* BlogFeedController.swift in Sources */,
 				2C7A55012450BB400086AB73 /* messagesNavControler.swift in Sources */,
 				2C7A54BF2450B98C0086AB73 /* FriendFetcher.swift in Sources */,
 				2C6FA63B245DA26100DF9742 /* MessagesPageController.swift in Sources */,
