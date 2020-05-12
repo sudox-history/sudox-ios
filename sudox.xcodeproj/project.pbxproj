@@ -13,6 +13,11 @@
 		2C010AB52464332500332EF6 /* UserProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C010AB32464332500332EF6 /* UserProfileTableViewCell.swift */; };
 		2C010AB62464332500332EF6 /* UserProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C010AB42464332500332EF6 /* UserProfileTableViewCell.xib */; };
 		2C010ABD2464428500332EF6 /* MoreInfoInProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C010ABB2464428500332EF6 /* MoreInfoInProfileTableViewCell.swift */; };
+		2C08B0B82469C3B200C0DF6E /* dateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C08B0B72469C3B200C0DF6E /* dateExtension.swift */; };
+		2C08B0C12469CBBD00C0DF6E /* localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2C08B0C32469CBBD00C0DF6E /* localizable.strings */; };
+		2C08B0C52469EDC600C0DF6E /* timeTestsForDialogue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C08B0C42469EDC600C0DF6E /* timeTestsForDialogue.swift */; };
+		2C08B0C7246A06FC00C0DF6E /* timeTestsForPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C08B0C6246A06FC00C0DF6E /* timeTestsForPosts.swift */; };
+		2C23FB44246B2156004CBD09 /* timeTestsForUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C23FB43246B2156004CBD09 /* timeTestsForUsers.swift */; };
 		2C6FA63B245DA26100DF9742 /* MessagesPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6FA63A245DA26100DF9742 /* MessagesPageController.swift */; };
 		2C6FA63D245DA29A00DF9742 /* TalksListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6FA63C245DA29A00DF9742 /* TalksListViewController.swift */; };
 		2C7A54752450B6780086AB73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7A54742450B6780086AB73 /* AppDelegate.swift */; };
@@ -108,6 +113,11 @@
 		2C010AB32464332500332EF6 /* UserProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileTableViewCell.swift; sourceTree = "<group>"; };
 		2C010AB42464332500332EF6 /* UserProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserProfileTableViewCell.xib; sourceTree = "<group>"; };
 		2C010ABB2464428500332EF6 /* MoreInfoInProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreInfoInProfileTableViewCell.swift; sourceTree = "<group>"; };
+		2C08B0B72469C3B200C0DF6E /* dateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dateExtension.swift; sourceTree = "<group>"; };
+		2C08B0C22469CBBD00C0DF6E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/localizable.strings; sourceTree = "<group>"; };
+		2C08B0C42469EDC600C0DF6E /* timeTestsForDialogue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timeTestsForDialogue.swift; sourceTree = "<group>"; };
+		2C08B0C6246A06FC00C0DF6E /* timeTestsForPosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timeTestsForPosts.swift; sourceTree = "<group>"; };
+		2C23FB43246B2156004CBD09 /* timeTestsForUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timeTestsForUsers.swift; sourceTree = "<group>"; };
 		2C6FA63A245DA26100DF9742 /* MessagesPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesPageController.swift; sourceTree = "<group>"; };
 		2C6FA63C245DA29A00DF9742 /* TalksListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalksListViewController.swift; sourceTree = "<group>"; };
 		2C7A54712450B6780086AB73 /* sudox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sudox.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -266,6 +276,9 @@
 			isa = PBXGroup;
 			children = (
 				2C7A548B2450B67A0086AB73 /* sudoxTests.swift */,
+				2C08B0C42469EDC600C0DF6E /* timeTestsForDialogue.swift */,
+				2C08B0C6246A06FC00C0DF6E /* timeTestsForPosts.swift */,
+				2C23FB43246B2156004CBD09 /* timeTestsForUsers.swift */,
 				2C7A548D2450B67A0086AB73 /* Info.plist */,
 			);
 			path = sudoxTests;
@@ -290,6 +303,8 @@
 				2C7A54A72450B98C0086AB73 /* person.swift */,
 				2C7A54A82450B98C0086AB73 /* Extensions.swift */,
 				2C7A54AF2450B98C0086AB73 /* FriendFetcher.swift */,
+				2C08B0B72469C3B200C0DF6E /* dateExtension.swift */,
+				2C08B0C32469CBBD00C0DF6E /* localizable.strings */,
 				2C7A54B02450B98C0086AB73 /* colors.swift */,
 				2C7A54B12450B98C0086AB73 /* titles.swift */,
 				2C7A54B72450B98C0086AB73 /* Socket.swift */,
@@ -634,6 +649,7 @@
 				2C7A54812450B67A0086AB73 /* LaunchScreen.storyboard in Resources */,
 				2C9CA4052455DEA9004ED8A7 /* ChatListTableViewCell.xib in Resources */,
 				2C7A547E2450B67A0086AB73 /* Assets.xcassets in Resources */,
+				2C08B0C12469CBBD00C0DF6E /* localizable.strings in Resources */,
 				2C010AB22464331200332EF6 /* BotsListTableViewCell.xib in Resources */,
 				2C010AB62464332500332EF6 /* UserProfileTableViewCell.xib in Resources */,
 				2C7A547C2450B6780086AB73 /* Main.storyboard in Resources */,
@@ -838,6 +854,7 @@
 				2C7A54D92450BA630086AB73 /* FriendsListView.swift in Sources */,
 				2C7A54772450B6780086AB73 /* SceneDelegate.swift in Sources */,
 				80EFAC4824631F9D007A16FA /* BlogFeedController.swift in Sources */,
+				2C08B0B82469C3B200C0DF6E /* dateExtension.swift in Sources */,
 				2C010ABD2464428500332EF6 /* MoreInfoInProfileTableViewCell.swift in Sources */,
 				2C7A55012450BB400086AB73 /* messagesNavControler.swift in Sources */,
 				2C7A54BF2450B98C0086AB73 /* FriendFetcher.swift in Sources */,
@@ -852,6 +869,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C08B0C7246A06FC00C0DF6E /* timeTestsForPosts.swift in Sources */,
+				2C23FB44246B2156004CBD09 /* timeTestsForUsers.swift in Sources */,
+				2C08B0C52469EDC600C0DF6E /* timeTestsForDialogue.swift in Sources */,
 				2C7A548C2450B67A0086AB73 /* sudoxTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -880,6 +900,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		2C08B0C32469CBBD00C0DF6E /* localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2C08B0C22469CBBD00C0DF6E /* en */,
+			);
+			name = localizable.strings;
+			sourceTree = "<group>";
+		};
 		2C7A547A2450B6780086AB73 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1058,7 +1086,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Z6TZXH8MS8;
+				DEVELOPMENT_TEAM = 2QFL4STWWK;
 				INFOPLIST_FILE = sudoxTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1081,7 +1109,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Z6TZXH8MS8;
+				DEVELOPMENT_TEAM = 2QFL4STWWK;
 				INFOPLIST_FILE = sudoxTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1105,7 +1133,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 2QFL4STWWK;
 				INFOPLIST_FILE = sudoxUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1130,7 +1158,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 2QFL4STWWK;
 				INFOPLIST_FILE = sudoxUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

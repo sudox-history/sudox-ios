@@ -19,9 +19,12 @@ class MessagesViewController : UIViewController {
         setupView()
         timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(updateTableView), userInfo: nil, repeats: true);
         chatsListData.append(messagesListStruct(name: "Никита Казанцев", id: "USAxWDpxyWy2KQBqrs6gqqJ7mc2E84wz", lastMessage: "О, опять обогнали Android в прогрессе", timeOfLastMessage: Date(), isOnline: true, numberOfUnread: 2, isMuted: false))
-        chatsListData.append(messagesListStruct(name: "Никита Казанцев", id: "buFKx4meCBN3LtGmACJs55vCFca8Guhc", lastMessage: "О, опять обогнали Android в прогрессе", timeOfLastMessage: Date(), isOnline: false, numberOfUnread: 105, isMuted: true))
+        chatsListData.append(messagesListStruct(name: "Никита Казанцев", id: "buFKx4meCBN3LtGmACJs55vCFca8Guhc", lastMessage: "О, опять обогнали Android в прогрессе", timeOfLastMessage: Date().addingTimeInterval(-15000), isOnline: false, numberOfUnread: 105, isMuted: true))
+        chatsListData.append(messagesListStruct(name: "Никита Казанцев", id: "USAxWDpxyWy2KQBqrs6gqqJ7mc2E84wz", lastMessage: "О, опять обогнали Android в прогрессе", timeOfLastMessage: Date().addingTimeInterval(-86400), isOnline: true, numberOfUnread: 2, isMuted: false))
+        chatsListData.append(messagesListStruct(name: "Никита Казанцев", id: "buFKx4meCBN3LtGmACJs55vCFca8Guhc", lastMessage: "О, опять обогнали Android в прогрессе", timeOfLastMessage: Date().addingTimeInterval(-172800), isOnline: false, numberOfUnread: 105, isMuted: true))
+        chatsListData.append(messagesListStruct(name: "Никита Казанцев", id: "USAxWDpxyWy2KQBqrs6gqqJ7mc2E84wz", lastMessage: "О, опять обогнали Android в прогрессе", timeOfLastMessage: Date().addingTimeInterval(-691200), isOnline: true, numberOfUnread: 2, isMuted: false))
+        chatsListData.append(messagesListStruct(name: "Никита Казанцев", id: "buFKx4meCBN3LtGmACJs55vCFca8Guhc", lastMessage: "О, опять обогнали Android в прогрессе", timeOfLastMessage: Date().addingTimeInterval(-47304000), isOnline: false, numberOfUnread: 105, isMuted: true))
         chatsListData.append(messagesListStruct(name: "Никита Казанцев", id: "USAxWDpxyWy2KQBqrs6gqqJ7mc2E84wz", lastMessage: "О, опять обогнали Android в прогрессе", timeOfLastMessage: Date(), isOnline: true, numberOfUnread: 2, isMuted: false))
-        chatsListData.append(messagesListStruct(name: "Никита Казанцев", id: "buFKx4meCBN3LtGmACJs55vCFca8Guhc", lastMessage: "О, опять обогнали Android в прогрессе", timeOfLastMessage: Date(), isOnline: false, numberOfUnread: 105, isMuted: true))
         tableView.reloadData()
     }
     
@@ -68,8 +71,8 @@ extension MessagesViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChatListTableViewCell", for: indexPath) as! ChatListTableViewCell
         let currentChatinList = chatsListData[indexPath.row] // создаю переменную с отдельным чатом
-        let dateString = currentChatinList.timeOfLastMessage.timeAgoSinceDate // время с последнего сообщения
-        cell.timeOfLastMessageLabel.text = dateString()
+        let dateString = currentChatinList.timeOfLastMessage.timeAgoSinceDateForDialogue(nowTime: Date()) // время с последнего сообщения
+        cell.timeOfLastMessageLabel.text = dateString
         cell.nameLabel.text = currentChatinList.name
         
         cell.lastMessageLabel.text = currentChatinList.lastMessage
@@ -94,8 +97,6 @@ extension MessagesViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let date = Date()
         let calendar = Calendar.current
-        print(calendar.locale)
-        print(calendar.firstWeekday)
         let weekday = calendar.component(.weekday, from: date)
         print(weekday)
         let exampleDate = Date().addingTimeInterval(-15000)

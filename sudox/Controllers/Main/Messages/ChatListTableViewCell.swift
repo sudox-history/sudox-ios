@@ -30,7 +30,6 @@ class ChatListTableViewCell: UITableViewCell {
         numberOfUnreadLabel.layer.cornerRadius = self.numberOfUnreadLabel.frame.size.width / 2 //правильное закругление
         
     }
-
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
