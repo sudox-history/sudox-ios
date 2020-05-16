@@ -12,6 +12,6 @@ import UIKit
 class BlogBotsController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemTeal
+        //view.backgroundColor = .systemTeal
     }
 }

@@ -114,6 +114,41 @@ class NativeButton: UIButton {
         }
     }
 }
+class ButtonWithMagic: UIButton {
+    
+    private func setup() {
+//        backgroundColor = myColors.NativeBlue
+//        setTitleColor(UIColor.white, for: .normal)
+//        //titleLabel?.font = UIFont.systemFont(ofSize: 22)
+//        self.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.medium)
+//        self.layer.masksToBounds = true
+//        self.layer.cornerRadius = 8
+//        self.contentEdgeInsets = UIEdgeInsets.init(top: 15, left: 15, bottom: 15, right: 15)
+       
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    override var isEnabled: Bool {
+        didSet {
+            backgroundColor = isEnabled ? UIColor.lightGray.withAlphaComponent(0.5) : tintColor.withAlphaComponent(1.0)
+        }
+    }
+    override var isHighlighted: Bool {
+        didSet {
+            alpha = isHighlighted ? 0.5 : 1
+            
+        }
+    }
+}
 extension UILabel {
     func setUpMainLabel() {
         // заменить на open sans
