@@ -80,7 +80,8 @@ class MessagesPageController: UIPageViewController, UIPageViewControllerDataSour
         
     }
     
-    
+
+
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         segmantControl.selectedSegmentIndex = 0
         
@@ -98,8 +99,11 @@ class MessagesPageController: UIPageViewController, UIPageViewControllerDataSour
             return nil
         }
         
+        segmantControl.selectedSegmentIndex = 1
         return orderedViewControllers[previousIndex]
     }
+    
+    
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         segmantControl.selectedSegmentIndex = 1
@@ -120,5 +124,4 @@ class MessagesPageController: UIPageViewController, UIPageViewControllerDataSour
         
         return orderedViewControllers[nextIndex]
     }
-    
 }

@@ -37,13 +37,6 @@ func getColor() -> colors {
 }
 
 
-
-
-
-
-
-
-
 // MARK: Функции преобразования цвета
 
 extension UIColor {

@@ -167,6 +167,8 @@ class loginPhoneFormVC: UIViewController {
             //MsgPack упаковка для последующей отправк data (массив байтов) на сервер
             let dict = createMethod(method_name: "auth.create", data: createData(user_phone: rawNumber))
             let data = try! MessagePackEncoder().encode(dict)
+            
+            	
 
             // отправляем телефон на сервер.
             sk.send(data)

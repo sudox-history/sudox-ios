@@ -21,7 +21,7 @@ class Network {
     public var isConnected = false
     
     
-    init() {
+    private init() { //  добавил private без теста
         self.websocket?.delegate = self
         connect()
     }

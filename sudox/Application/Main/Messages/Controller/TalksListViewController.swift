@@ -11,6 +11,6 @@ import UIKit
 class TalksListViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.systemBackground
+        view.backgroundColor = UIColor.blue
     }
 }
