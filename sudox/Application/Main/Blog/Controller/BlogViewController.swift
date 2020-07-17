@@ -59,6 +59,9 @@ class BlogViewController: UIPageViewController, UIPageViewControllerDataSource, 
         segmantControl.addTarget(self, action: #selector(changeScreen), for: .valueChanged)
         segmantControl.backgroundColor = navigationController?.navigationBar.backgroundColor
         
+        let barButton = UIBarButtonItem.init(barButtonSystemItem: .edit, target: self, action: nil)
+        barButton.tintColor = UIColor.black
+        self.navigationItem.rightBarButtonItem = barButton
         navigationController?.hidesBarsOnSwipe = true
     }
     
